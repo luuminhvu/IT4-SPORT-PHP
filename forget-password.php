@@ -55,11 +55,12 @@ if (isset($_POST['form1'])) {
             "Reply-To: noreply@" . BASE_URL . "\r\n" .
             "X-Mailer: PHP/" . phpversion() . "\r\n" .
             "MIME-Version: 1.0\r\n" .
-            "Content-Type: text/html; charset=ISO-8859-1\r\n";
-
+            "Content-Type: text/html; charset=UTF-8\r\n"; // Sử dụng UTF-8
+        
         mail($to, $subject, $message, $headers);
-
+        
         $success_message = $forget_password_message;
+        
     }
 }
 ?>
