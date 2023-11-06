@@ -15,7 +15,6 @@ foreach ($result as $row) {
 }
 ?>
 
-
 <?php if ($newsletter_on_off == 1): ?>
 	<section class="home-newsletter">
 		<div class="container">
@@ -27,18 +26,18 @@ foreach ($result as $row) {
 
 							if (empty($_POST['email_subscribe'])) {
 								$valid = 0;
-								$error_message1 .= LANG_VALUE_131;
+								$error_message1 .= $languages[131];
 							} else {
 								if (filter_var($_POST['email_subscribe'], FILTER_VALIDATE_EMAIL) === false) {
 									$valid = 0;
-									$error_message1 .= LANG_VALUE_134;
+									$error_message1 .= $languages[134];
 								} else {
 									$statement = $pdo->prepare("SELECT * FROM tbl_subscriber WHERE subs_email=?");
 									$statement->execute(array($_POST['email_subscribe']));
 									$total = $statement->rowCount();
 									if ($total) {
 										$valid = 0;
-										$error_message1 .= LANG_VALUE_147;
+										$error_message1 .= $languages[147];
 									} else {
 										// Sending email to the requested subscriber for email confirmation
 										// Getting activation key to send via email. also it will be saved to database until user click on the activation link.
@@ -61,11 +60,10 @@ foreach ($result as $row) {
 										// Getting the url of the verification link
 										$verification_url = BASE_URL . 'verify.php?email=' . $to . '&key=' . $key;
 
-										$message = '
-Cảm ơn bạn đã quan tâm đăng ký nhận bản tin của chúng tôi!<br><br>
-Vui lòng nhấp vào liên kết này để xác nhận đăng ký của bạn:
-					' . $verification_url . '<br><br>
-Liên kết này sẽ chỉ hoạt động trong 24 giờ.					';
+										$message = 'Cảm ơn bạn đã quan tâm đăng ký nhận bản tin của chúng tôi!<br><br>
+														Vui lòng nhấp vào liên kết này để xác nhận đăng ký của bạn:
+																			' . $verification_url . '<br><br>
+														Liên kết này sẽ chỉ hoạt động trong 24 giờ.					';
 
 										$headers = 'From: ' . $contact_email . "\r\n" .
 											'Reply-To: ' . $contact_email . "\r\n" .
@@ -76,7 +74,7 @@ Liên kết này sẽ chỉ hoạt động trong 24 giờ.					';
 										// Sending the email
 										mail($to, $subject, $message, $headers);
 
-										$success_message1 = LANG_VALUE_136;
+										$success_message1 = $languages[136];
 									}
 								}
 							}
@@ -91,14 +89,14 @@ Liên kết này sẽ chỉ hoạt động trong 24 giờ.					';
 						<form action="" method="post">
 							<?php $csrf->echoInputField(); ?>
 							<h2>
-								<?php echo LANG_VALUE_93; ?>
+								<?php echo $languages[93]; ?>
 							</h2>
 							<div class="input-group">
-								<input type="email" class="form-control" placeholder="<?php echo LANG_VALUE_95; ?>"
+								<input type="email" class="form-control" placeholder="<?php echo $languages[95]; ?>"
 									name="email_subscribe">
 								<span class="input-group-btn">
 									<button class="btn btn-theme" type="submit" name="form_subscribe">
-										<?php echo LANG_VALUE_92; ?>
+										<?php echo $languages[92]; ?>
 									</button>
 								</span>
 							</div>

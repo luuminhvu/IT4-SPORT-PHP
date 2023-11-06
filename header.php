@@ -13,6 +13,8 @@ $success_message1 = '';
 
 // Getting all language variables into array as global variable
 $i = 1;
+$j = 1;
+
 $statement = $pdo->prepare("SELECT * FROM tbl_language");
 $statement->execute();
 $result = $statement->fetchAll(PDO::FETCH_ASSOC);
@@ -20,6 +22,13 @@ foreach ($result as $row) {
 	define('LANG_VALUE_' . $i, $row['lang_value']);
 	$i++;
 }
+
+$statement->execute();
+$languages = [];
+foreach ($result as $row) {
+	$languages[$row['lang_id']] = $row['lang_value'];
+}
+
 
 $statement = $pdo->prepare("SELECT * FROM tbl_settings WHERE id=1");
 $statement->execute();
@@ -314,20 +323,20 @@ foreach ($result as $row) {
 						if (isset($_SESSION['customer'])) {
 							?>
 							<li><i class="fa fa-user"></i>
-								<?php echo LANG_VALUE_13; ?>
+								<?php echo $langValues[13] ?>
 								<?php echo $_SESSION['customer']['cust_name']; ?>
 							</li>
 							<li><a href="dashboard.php"><i class="fa fa-home"></i>
-									<?php echo LANG_VALUE_89; ?>
+									<?php echo $langValues[88] ?>
 								</a></li>
 							<?php
 						} else {
 							?>
 							<li><a href="login.php"><i class="fa fa-sign-in"></i>
-									<?php echo LANG_VALUE_9; ?>
+									<?php echo $languages[9]; ?>
 								</a></li>
 							<li><a href="registration.php"><i class="fa fa-user-plus"></i>
-									<?php echo LANG_VALUE_15; ?>
+									<?php echo $languages[15]; ?>
 								</a>
 							</li>
 							<?php
@@ -335,8 +344,8 @@ foreach ($result as $row) {
 						?>
 
 						<li><a href="cart.php"><i class="fa fa-shopping-cart"></i>
-								<?php echo LANG_VALUE_18; ?> (
-								<?php echo LANG_VALUE_1; ?>
+								<?php echo $languages[18]; ?> (
+								<?php echo $languages[1]; ?>
 								<?php
 								if (isset($_SESSION['cart_p_id'])) {
 									$table_total_price = 0;
@@ -366,11 +375,11 @@ foreach ($result as $row) {
 					<form class="navbar-form navbar-left" role="search" action="search-result.php" method="get">
 						<?php $csrf->echoInputField(); ?>
 						<div class="form-group">
-							<input type="text" class="form-control search-top" placeholder="<?php echo LANG_VALUE_2; ?>"
+							<input type="text" class="form-control search-top" placeholder="<?php echo $languages[2]; ?>"
 								name="search_text">
 						</div>
 						<button type="submit" class="btn btn-danger">
-							<?php echo LANG_VALUE_3; ?>
+							<?php echo $languages[3]; ?>
 						</button>
 					</form>
 				</div>
