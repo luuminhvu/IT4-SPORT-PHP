@@ -13,7 +13,7 @@ foreach ($result as $row) {
 if(isset($_POST['form1'])) {
         
     if(empty($_POST['cust_email']) || empty($_POST['cust_password'])) {
-        $error_message = LANG_VALUE_132.'<br>';
+        $error_message = $languages[132].'<br>';
     } else {
         $cust_email = strip_tags($_POST['cust_email']);
         $cust_password = strip_tags($_POST['cust_password']);
@@ -28,14 +28,14 @@ if(isset($_POST['form1'])) {
         }
 
         if($total==0) {
-            $error_message .= LANG_VALUE_133.'<br>';
+            $error_message .= $languages[133].'<br>';
         } else {
             //using MD5 form
             if( $row_password != md5($cust_password) ) {
-                $error_message .= LANG_VALUE_139.'<br>';
+                $error_message .= $languages[139].'<br>';
             } else {
                 if($cust_status == 0) {
-                    $error_message .= LANG_VALUE_148.'<br>';
+                    $error_message .= $languages[148].'<br>';
                 } else {
                     $_SESSION['customer'] = $row;
                     header("location: ".BASE_URL."dashboard.php");
@@ -49,7 +49,7 @@ if(isset($_POST['form1'])) {
 
 <div class="page-banner" style="background-color:#444;background-image: url(assets/uploads/<?php echo $banner_login; ?>);">
     <div class="inner">
-        <h1><?php echo LANG_VALUE_10; ?></h1>
+        <h1><?php echo $languages[10]; ?></h1>
     </div>
 </div>
 
@@ -74,18 +74,18 @@ if(isset($_POST['form1'])) {
                                 }
                                 ?>
                                 <div class="form-group">
-                                    <label for=""><?php echo LANG_VALUE_94; ?> *</label>
+                                    <label for=""><?php echo $languages[94]; ?> *</label>
                                     <input type="email" class="form-control" name="cust_email">
                                 </div>
                                 <div class="form-group">
-                                    <label for=""><?php echo LANG_VALUE_96; ?> *</label>
+                                    <label for=""><?php echo $languages[96]; ?> *</label>
                                     <input type="password" class="form-control" name="cust_password">
                                 </div>
                                 <div class="form-group">
                                     <label for=""></label>
-                                    <input type="submit" class="btn btn-success" value="<?php echo LANG_VALUE_4; ?>" name="form1">
+                                    <input type="submit" class="btn btn-success" value="<?php echo $languages[4]; ?>" name="form1">
                                 </div>
-                                <a href="forget-password.php" style="color:#e4144d;"><?php echo LANG_VALUE_97; ?>?</a>
+                                <a href="forget-password.php" style="color:#e4144d;"><?php echo $languages[97]; ?>?</a>
                             </div>
                         </div>                        
                     </form>
