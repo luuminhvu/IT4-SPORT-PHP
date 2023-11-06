@@ -359,7 +359,7 @@ if(isset($_POST['form1'])) {
 							</div>
 						</div>
 						<div class="form-group">
-							<label for="" class="col-sm-3 control-label">Chính sách đổi trả</label>
+							<label for="" class="col-sm-3 control-label">Chính sách</label>
 							<div class="col-sm-8">
 								<textarea name="p_return_policy" class="form-control" cols="30" rows="10" id="editor5"></textarea>
 							</div>
