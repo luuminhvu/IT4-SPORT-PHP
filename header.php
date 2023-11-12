@@ -327,7 +327,8 @@ foreach ($result as $row) {
 								<?php echo $_SESSION['customer']['cust_name']; ?>
 							</li>
 							<li><a href="dashboard.php"><i class="fa fa-home"></i>
-									<?php echo $languages[88] ?>
+
+									<?php echo $languages[89] ?>
 								</a></li>
 							<?php
 						} else {
