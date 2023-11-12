@@ -225,6 +225,20 @@
                                     unset($_SESSION['cart_p_name']);
                                     unset($_SESSION['cart_p_featured_photo']);
                                     echo "<span style='color:blue'>Ban da thanh toan thanh cong</span>";
+                                    $to=$_SESSION['customer']['cust_email'];
+        
+                                    $subject = "Bạn đã đặt hàng thành công";
+                                    $verify_link = BASE_URL.'customer-order.php';
+                                    $message = "Xin chào <strong>".$_SESSION['customer']['cust_name']."</strong>,<br /><br />Bạn đã đặt hàng thành công. Vui lòng click vào link bên dưới để xem chi tiết đơn hàng.<br /><br /><a href=".$verify_link.">Xem đơn hàng</a><br /><br />Thanks<br />VNPAY";
+                            
+                                    $headers = "From: noreply@" . BASE_URL . "\r\n" .
+                                               "Reply-To: noreply@" . BASE_URL . "\r\n" .
+                                               "X-Mailer: PHP/" . phpversion() . "\r\n" . 
+                                               "MIME-Version: 1.0\r\n" . 
+                                               "Content-Type: text/html; charset=UTF-8\r\n";
+                                    
+                                    // Sending Email
+                                    mail($to, $subject, $message, $headers);
                                     header("refresh:3;url=../dashboard.php");
                                     exit();
                                 } else {

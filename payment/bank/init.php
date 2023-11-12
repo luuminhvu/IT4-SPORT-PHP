@@ -35,7 +35,7 @@ if( !isset($_REQUEST['msg']) ) {
 	                            bank_transaction_info,
 	                            payment_method,
 	                            payment_status,
-	                            shipping_status,
+	                            tss_id,
 	                            payment_id
 	                        ) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)");
 	    $statement->execute(array(
@@ -52,7 +52,7 @@ if( !isset($_REQUEST['msg']) ) {
 	                            $_POST['transaction_info'],
 	                            'Bank Deposit',
 	                            'Pending',
-	                            'Pending',
+	                            1,
 	                            $payment_id
 	                        ));
 
@@ -143,6 +143,20 @@ if( !isset($_REQUEST['msg']) ) {
             $statement->execute(array($final_quantity,$arr_cart_p_id[$i]));
             
 	    }
+		$to=$_SESSION['customer']['cust_email'];
+        
+		$subject = "Bạn đã đặt hàng thành công";
+		$verify_link = BASE_URL.'customer-order.php';
+		$message = "Xin chào <strong>".$_SESSION['customer']['cust_name']."</strong>,<br /><br />Bạn đã đặt hàng thành công. Vui lòng click vào link bên dưới để xem chi tiết đơn hàng.<br /><br /><a href=".$verify_link.">Xem đơn hàng</a><br /><br />Thanks<br />VNPAY";
+
+		$headers = "From: noreply@" . BASE_URL . "\r\n" .
+					"Reply-To: noreply@" . BASE_URL . "\r\n" .
+					"X-Mailer: PHP/" . phpversion() . "\r\n" . 
+					"MIME-Version: 1.0\r\n" . 
+					"Content-Type: text/html; charset=UTF-8\r\n";
+		
+		// Sending Email
+		mail($to, $subject, $message, $headers);
 	    unset($_SESSION['cart_p_id']);
 	    unset($_SESSION['cart_size_id']);
 	    unset($_SESSION['cart_size_name']);
