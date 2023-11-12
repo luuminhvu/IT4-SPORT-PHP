@@ -102,7 +102,7 @@
                                         bank_transaction_info,
                                         payment_method,
                                         payment_status,
-                                        shipping_status,
+                                        tss_id,
                                         payment_id
                                         ) 
                                         VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)");
@@ -121,7 +121,8 @@
                                         '',
                                         'VNPAY',
                                         'Completed',
-                                        'Pending',
+                                        1,
+
                                         $_GET['vnp_TransactionNo']
                                     ));
                 

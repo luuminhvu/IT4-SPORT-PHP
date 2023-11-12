@@ -242,6 +242,12 @@ if($success_message != '') {
                         		<b>Payment Id:</b> <?php echo $row['payment_id']; ?><br>
 								<b>Date:</b> <?php echo $row['payment_date']; ?><br>
                         		<b>Transaction Information:</b> <br><?php echo $row['bank_transaction_info']; ?><br>
+                        	
+                            <?php elseif($row['payment_method'] == 'VNPAY'): ?>
+                        		<b>Payment Method:</b> <?php echo '<span style="color:red;"><b>'.$row['payment_method'].'</b></span>'; ?><br>
+                        		<b>Payment Id:</b> <?php echo $row['payment_id']; ?><br>
+								<b>Date:</b> <?php echo $row['payment_date']; ?><br>
+                        		<b>Transaction Id:</b> <?php echo $row['txnid']; ?><br>
                         	<?php endif; ?>
                         </td>
                         <td>$<?php echo $row['paid_amount']; ?></td>
