@@ -323,11 +323,11 @@ foreach ($result as $row) {
 						if (isset($_SESSION['customer'])) {
 							?>
 							<li><i class="fa fa-user"></i>
-								<?php echo $langValues[13] ?>
+								
 								<?php echo $_SESSION['customer']['cust_name']; ?>
 							</li>
 							<li><a href="dashboard.php"><i class="fa fa-home"></i>
-									<?php echo $langValues[88] ?>
+									<?php echo $languages[89] ?>
 								</a></li>
 							<?php
 						} else {

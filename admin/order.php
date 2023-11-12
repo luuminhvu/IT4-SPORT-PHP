@@ -64,7 +64,7 @@ Payment Date: '.$row['payment_date'].'<br>
 Payment Details: <br>'.$payment_details.'<br>
 Paid Amount: '.$row['paid_amount'].'<br>
 Payment Status: '.$row['payment_status'].'<br>
-Shipping Status: '.$row['shipping_status'].'<br>
+Shipping Status: '.$row['tss_id'].'<br>
 Payment Id: '.$row['payment_id'].'<br>
             ';
         }
@@ -149,6 +149,7 @@ if($success_message != '') {
                     <th>Paid Amount</th>
                     <th>Payment Status</th>
                     <th>Shipping Status</th>
+                    <th>Update</th>
 			        <th>Action</th>
 			    </tr>
 			</thead>
@@ -256,18 +257,33 @@ if($success_message != '') {
                             ?>
                         </td>
                         <td>
-                            <?php echo $row['shipping_status']; ?>
+                        <?php
+                           $statement4 = $pdo->prepare("SELECT * FROM tbl_transactstatus where tss_id =?");
+                           $statement4->execute(array($row['tss_id']));
+                           $result4 = $statement4->fetchAll(PDO::FETCH_ASSOC);
+                           foreach ($result4 as $row4) {
+                               $shipping_stutus = $row4['tss_status'];
+                           }
+                           ?>
+                            <?php echo $shipping_stutus; ?>
                             <br><br>
-                            <?php
-                            if($row['payment_status']=='Completed') {
-                                if($row['shipping_status']=='Pending'){
+                            <select name="" class="">
+                                <option value="">Chọn status</option>
+                                <?php
+                                $statement3 = $pdo->prepare("SELECT * FROM tbl_transactstatus ORDER BY tss_id ASC");
+                                $statement3->execute();
+                                $result3 = $statement3->fetchAll(PDO::FETCH_ASSOC);	
+                                foreach ($result3 as $row3) {
                                     ?>
-                                    <a href="shipping-change-status.php?id=<?php echo $row['id']; ?>&task=Completed" class="btn btn-warning btn-xs" style="width:100%;margin-bottom:4px;">Mark Complete</a>
+                                    <option value="<?php echo $row3['tss_id']; ?>"><?php echo $row3['tss_status']; ?></option>
                                     <?php
                                 }
-                            }
-                            ?>
+                                ?>
+                            </select>
                         </td>
+                        <td>
+                            <a href="#" class="btn btn-danger btn-xs"  data-toggle="modal" style="width:100%;">Update</a>
+	                    </td>
 	                    <td>
                             <a href="#" class="btn btn-danger btn-xs" data-href="order-delete.php?id=<?php echo $row['id']; ?>" data-toggle="modal" data-target="#confirm-delete" style="width:100%;">Delete</a>
 	                    </td>

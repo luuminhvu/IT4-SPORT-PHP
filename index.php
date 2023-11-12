@@ -196,12 +196,12 @@ foreach ($result as $row) {
                                         </a>
                                     </h3>
                                     <h4>
-                                        $
-                                        <?php echo $row['p_current_price']; ?>
+                                        
+                                        <?php echo $row['p_current_price']; ?> đ
                                         <?php if ($row['p_old_price'] != ''): ?>
                                             <del>
-                                                $
-                                                <?php echo $row['p_old_price']; ?>
+                                                
+                                                <?php echo $row['p_old_price']; ?> đ
                                             </del>
                                         <?php endif; ?>
                                     </h4>
@@ -332,12 +332,10 @@ foreach ($result as $row) {
                                         </a>
                                     </h3>
                                     <h4>
-                                        $
-                                        <?php echo $row['p_current_price']; ?>
+                                        <?php echo $row['p_current_price']; ?>đ
                                         <?php if ($row['p_old_price'] != ''): ?>
                                             <del>
-                                                $
-                                                <?php echo $row['p_old_price']; ?>
+                                                <?php echo $row['p_old_price']; ?>đ
                                             </del>
                                         <?php endif; ?>
                                     </h4>
@@ -470,12 +468,10 @@ foreach ($result as $row) {
                                         </a>
                                     </h3>
                                     <h4>
-                                        $
-                                        <?php echo $row['p_current_price']; ?>
+                                        <?php echo $row['p_current_price']; ?>đ
                                         <?php if ($row['p_old_price'] != ''): ?>
                                             <del>
-                                                $
-                                                <?php echo $row['p_old_price']; ?>
+                                                <?php echo $row['p_old_price']; ?>đ
                                             </del>
                                         <?php endif; ?>
                                     </h4>
