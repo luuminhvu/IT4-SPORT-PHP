@@ -64,7 +64,7 @@ if (!isset($_POST["txn_id"]) && !isset($_POST["txn_type"])){
                         bank_transaction_info,
                         payment_method,
 						payment_status,
-						shipping_status,
+						tss_id,
 						payment_id
 						) 
 						VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)");
@@ -82,7 +82,7 @@ if (!isset($_POST["txn_id"]) && !isset($_POST["txn_type"])){
 						'',
 						'PayPal',
 						'Pending',
-						'Pending',
+						1,
 						$item_number
 					));
 
