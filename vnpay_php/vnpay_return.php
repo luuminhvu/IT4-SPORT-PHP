@@ -112,7 +112,7 @@
                                         $_SESSION['customer']['cust_name'],
                                         $_SESSION['customer']['cust_email'],
                                         $payment_date,
-                                        '',
+                                        $_GET['vnp_TxnRef'],
                                         $_GET['vnp_Amount']/100,
                                         '',
                                         '',
