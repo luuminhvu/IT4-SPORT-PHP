@@ -120,7 +120,7 @@
                                         '',
                                         '',
                                         'VNPAY',
-                                        'Pending',
+                                        'Completed',
                                         'Pending',
                                         $_GET['vnp_TransactionNo']
                                     ));
