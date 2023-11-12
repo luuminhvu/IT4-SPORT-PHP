@@ -484,14 +484,15 @@ if ($success_message1 != '') {
                                     <span>
                                         <?php if ($p_old_price != ''): ?>
                                             <del>
-                                               
                                                 <?php echo $p_old_price; ?>
                                                 <?php echo LANG_VALUE_1; ?>
                                             </del>
                                         <?php endif; ?>
+                                      
+                                 
+                                        
                                         <?php echo $p_current_price; ?>
                                         <?php echo LANG_VALUE_1; ?>
-                                        
                                     </span>
                                 </div>
                                 <input type="hidden" name="p_current_price" value="<?php echo $p_current_price; ?>">
