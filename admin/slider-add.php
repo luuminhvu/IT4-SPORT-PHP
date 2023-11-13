@@ -12,11 +12,11 @@ if(isset($_POST['form1'])) {
         $file_name = basename( $path, '.' . $ext );
         if( $ext!='jpg' && $ext!='png' && $ext!='jpeg' && $ext!='gif' ) {
             $valid = 0;
-            $error_message .= 'You must have to upload jpg, jpeg, gif or png file<br>';
+            $error_message .= 'Bạn phải tải lên file jpg, jpeg, gif hoặc png<br>';
         }
     } else {
     	$valid = 0;
-        $error_message .= 'You must have to select a photo<br>';
+        $error_message .= 'Bạn phải chọn một ảnh<br>';
     }
 
 	if($valid == 1) {
@@ -49,10 +49,10 @@ if(isset($_POST['form1'])) {
 
 <section class="content-header">
 	<div class="content-header-left">
-		<h1>Add Slider</h1>
+		<h1>Thêm Slider</h1>
 	</div>
 	<div class="content-header-right">
-		<a href="slider.php" class="btn btn-primary btn-sm">View All</a>
+		<a href="slider.php" class="btn btn-primary btn-sm">Xem tất cả</a>
 	</div>
 </section>
 
