@@ -149,7 +149,6 @@ if($success_message != '') {
                     <th>Paid Amount</th>
                     <th>Payment Status</th>
                     <th>Shipping Status</th>
-                    <th>Update</th>
 			        <th>Action</th>
 			    </tr>
 			</thead>
@@ -250,7 +249,7 @@ if($success_message != '') {
                         		<b>Transaction Id:</b> <?php echo $row['txnid']; ?><br>
                         	<?php endif; ?>
                         </td>
-                        <td>$<?php echo $row['paid_amount']; ?></td>
+                        <td><?php echo $row['paid_amount']; ?> đ</td>
                         <td>
                             <?php echo $row['payment_status']; ?>
                             <br><br>
@@ -272,24 +271,28 @@ if($success_message != '') {
                            }
                            ?>
                             <?php echo $shipping_stutus; ?>
-                            <br><br>
-                            <select name="" class="">
-                                <option value="">Chọn status</option>
-                                <?php
-                                $statement3 = $pdo->prepare("SELECT * FROM tbl_transactstatus ORDER BY tss_id ASC");
-                                $statement3->execute();
-                                $result3 = $statement3->fetchAll(PDO::FETCH_ASSOC);	
-                                foreach ($result3 as $row3) {
-                                    ?>
-                                    <option value="<?php echo $row3['tss_id']; ?>"><?php echo $row3['tss_status']; ?></option>
-                                    <?php
-                                }
-                                ?>
-                            </select>
+                            <br><br>                         
+                            <form method="post" action="shipping-change-status.php">                  
+                                    <select name="tss_id" class="form-control select2">
+                                        <option value="">Chọn status</option>
+                                        <?php
+                                        $statement3 = $pdo->prepare("SELECT * FROM tbl_transactstatus ORDER BY tss_id ASC");
+                                        $statement3->execute();
+                                        $result3 = $statement3->fetchAll(PDO::FETCH_ASSOC);
+                                        foreach ($result3 as $row3) {
+                                        ?>
+                                            <option value="<?php echo $row3['tss_id']; ?>"><?php echo $row3['tss_status']; ?></option>
+                                        <?php
+                                        }
+                                        ?>
+                                    </select>
+                                    <input type="hidden" name="id" value="<?php echo $row['id']; ?>">
+                                    <button type="submit" class="btn btn-danger btn-xs" style="width:40%; margin-top: 20px;">Update</button>
+
+                            </form>
+
+                                
                         </td>
-                        <td>
-                            <a href="#" class="btn btn-danger btn-xs"  data-toggle="modal" style="width:100%;">Update</a>
-	                    </td>
 	                    <td>
                             <a href="#" class="btn btn-danger btn-xs" data-href="order-delete.php?id=<?php echo $row['id']; ?>" data-toggle="modal" data-target="#confirm-delete" style="width:100%;">Delete</a>
 	                    </td>
@@ -323,6 +326,5 @@ if($success_message != '') {
         </div>
     </div>
 </div>
-
 
 <?php require_once('footer.php'); ?>
