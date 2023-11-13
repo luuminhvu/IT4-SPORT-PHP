@@ -16,18 +16,18 @@ if (isset($_POST['form1'])) {
 
     if (empty($_POST['cust_email'])) {
         $valid = 0;
-        $error_message .= LANG_VALUE_131 . "\\n";
+        $error_message .=  $languages[131] . "\\n";
     } else {
         if (filter_var($_POST['cust_email'], FILTER_VALIDATE_EMAIL) === false) {
             $valid = 0;
-            $error_message .= LANG_VALUE_134 . "\\n";
+            $error_message .=  $languages[134] . "\\n";
         } else {
             $statement = $pdo->prepare("SELECT * FROM tbl_customer WHERE cust_email=?");
             $statement->execute(array($_POST['cust_email']));
             $total = $statement->rowCount();
             if (!$total) {
                 $valid = 0;
-                $error_message .= LANG_VALUE_135 . "\\n";
+                $error_message .=  $languages[135] . "\\n";
             }
         }
     }
@@ -47,10 +47,10 @@ if (isset($_POST['form1'])) {
         $statement = $pdo->prepare("UPDATE tbl_customer SET cust_token=?,cust_timestamp=? WHERE cust_email=?");
         $statement->execute(array($token, $now, strip_tags($_POST['cust_email'])));
 
-        $message = '<p>' . LANG_VALUE_142 . '<br> <a href="' . BASE_URL . 'reset-password.php?email=' . $_POST['cust_email'] . '&token=' . $token . '">Bấm vào đây</a>';
+        $message = '<p>' .  $languages[142] . '<br> <a href="' . BASE_URL . 'reset-password.php?email=' . $_POST['cust_email'] . '&token=' . $token . '">Bấm vào đây</a>';
 
         $to = $_POST['cust_email'];
-        $subject = LANG_VALUE_143;
+        $subject =  $languages[143];
         $headers = "From: noreply@" . BASE_URL . "\r\n" .
             "Reply-To: noreply@" . BASE_URL . "\r\n" .
             "X-Mailer: PHP/" . phpversion() . "\r\n" .
@@ -69,7 +69,7 @@ if (isset($_POST['form1'])) {
     style="background-color:#444;background-image: url(assets/uploads/<?php echo $banner_forget_password; ?>);">
     <div class="inner">
         <h1>
-            <?php echo LANG_VALUE_97; ?>
+            <?php echo  $languages[97]; ?>
         </h1>
     </div>
 </div>
@@ -94,17 +94,17 @@ if (isset($_POST['form1'])) {
                             <div class="col-md-4">
                                 <div class="form-group">
                                     <label for="">
-                                        <?php echo LANG_VALUE_94; ?> *
+                                        <?php echo  $languages[94]; ?> *
                                     </label>
                                     <input type="email" class="form-control" name="cust_email">
                                 </div>
                                 <div class="form-group">
                                     <label for=""></label>
-                                    <input type="submit" class="btn btn-primary" value="<?php echo LANG_VALUE_4; ?>"
+                                    <input type="submit" class="btn btn-primary" value="<?php echo  $languages[4]; ?>"
                                         name="form1">
                                 </div>
                                 <a href="login.php" style="color:#e4144d;">
-                                    <?php echo LANG_VALUE_12; ?>
+                                    <?php echo  $languages[12]; ?>
                                 </a>
                             </div>
                         </div>

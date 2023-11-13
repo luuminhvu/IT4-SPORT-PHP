@@ -6,7 +6,7 @@ if(isset($_POST['form1'])) {
 
     if(empty($_POST['country_id'])) {
         $valid = 0;
-        $error_message .= "You must have to select a country<br>";
+        $error_message .= "Bạn phải chọn một quốc gia<br>";
     } else {
 		// Duplicate Country checking
     	// current Country name that is in the database
@@ -22,7 +22,7 @@ if(isset($_POST['form1'])) {
     	$total = $statement->rowCount();							
     	if($total) {
     		$valid = 0;
-        	$error_message .= 'Country already exists<br>';
+        	$error_message .= 'Quốc gia đã tồn tại<br>';
     	}
     }
 
@@ -31,7 +31,7 @@ if(isset($_POST['form1'])) {
 		$statement = $pdo->prepare("UPDATE tbl_shipping_cost SET country_id=?,amount=? WHERE shipping_cost_id=?");
 		$statement->execute(array($_POST['country_id'],$_POST['amount'],$_REQUEST['id']));
 
-    	$success_message = 'Shipping Cost is updated successfully.';
+    	$success_message = 'Chi phí vận chuyển được cập nhật thành công.';
     }
 }
 ?>
@@ -55,10 +55,10 @@ if(!isset($_REQUEST['id'])) {
 
 <section class="content-header">
 	<div class="content-header-left">
-		<h1>Edit Shipping Cost</h1>
+		<h1>Chỉnh sửa chi phí vận chuyển</h1>
 	</div>
 	<div class="content-header-right">
-		<a href="shipping-cost.php" class="btn btn-primary btn-sm">View All</a>
+		<a href="shipping-cost.php" class="btn btn-primary btn-sm">Xem tất cả</a>
 	</div>
 </section>
 
@@ -95,10 +95,10 @@ foreach ($result as $row) {
             <div class="box box-info">
                 <div class="box-body">
                     <div class="form-group">
-                        <label for="" class="col-sm-2 control-label">Select Country <span>*</span></label>
+                        <label for="" class="col-sm-2 control-label">Chọn Quốc gia <span>*</span></label>
                         <div class="col-sm-4">
                             <select name="country_id" class="form-control select2">
-                                <option value="">Select a country</option>
+                                <option value="">Chọn quốc gia</option>
                                 <?php
                                 $statement = $pdo->prepare("SELECT * FROM tbl_country ORDER BY country_name ASC");
                                 $statement->execute();
@@ -113,7 +113,7 @@ foreach ($result as $row) {
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="" class="col-sm-2 control-label">Amount <span>*</span></label>
+                        <label for="" class="col-sm-2 control-label">Số lượng <span>*</span></label>
                         <div class="col-sm-4">
                             <input type="text" class="form-control" name="amount" value="<?php echo $amount; ?>">
                         </div>
@@ -121,7 +121,7 @@ foreach ($result as $row) {
                     <div class="form-group">
                     	<label for="" class="col-sm-2 control-label"></label>
                         <div class="col-sm-6">
-                          <button type="submit" class="btn btn-success pull-left" name="form1">Update</button>
+                          <button type="submit" class="btn btn-success pull-left" name="form1">Cập nhật</button>
                         </div>
                     </div>
                 </div>

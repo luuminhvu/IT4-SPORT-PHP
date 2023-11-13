@@ -57,7 +57,7 @@ if (isset($_POST['form1'])) {
                             $_SESSION['customer']['cust_id']
                         ));  
    
-    $success_message = LANG_VALUE_122;
+    $success_message =  $languages[122];
 
     $_SESSION['customer']['cust_b_name'] = strip_tags($_POST['cust_b_name']);
 
@@ -96,18 +96,18 @@ if (isset($_POST['form1'])) {
                         <?php $csrf->echoInputField(); ?>
                         <div class="row">
                             <div class="col-md-6">
-                                <h3><?php echo LANG_VALUE_86; ?></h3>
+                                <h3><?php echo  $languages[86]; ?></h3>
                                 <div class="form-group">
-                                    <label for=""><?php echo LANG_VALUE_102; ?></label>
+                                    <label for=""><?php echo  $languages[102]; ?></label>
                                     <input type="text" class="form-control" name="cust_b_name" value="<?php echo $_SESSION['customer']['cust_b_name']; ?>">
                                 </div>
                                 
                                 <div class="form-group">
-                                    <label for=""><?php echo LANG_VALUE_104; ?></label>
+                                    <label for=""><?php echo  $languages[104]; ?></label>
                                     <input type="text" class="form-control" name="cust_b_phone" value="<?php echo $_SESSION['customer']['cust_b_phone']; ?>">
                                 </div>
                                 <div class="form-group">
-                                    <label for=""><?php echo LANG_VALUE_106; ?></label>
+                                    <label for=""><?php echo  $languages[106]; ?></label>
                                     <select name="cust_b_country" class="form-control">
                                         <?php
                                         $statement = $pdo->prepare("SELECT * FROM tbl_country ORDER BY country_name ASC");
@@ -122,28 +122,28 @@ if (isset($_POST['form1'])) {
                                     </select>
                                 </div>
                                 <div class="form-group">
-                                    <label for=""><?php echo LANG_VALUE_105; ?></label>
+                                    <label for=""><?php echo  $languages[105]; ?></label>
                                     <textarea name="cust_b_address" class="form-control" cols="30" rows="10" style="height:100px;"><?php echo $_SESSION['customer']['cust_b_address']; ?></textarea>
                                 </div>
                                 <div class="form-group">
-                                    <label for=""><?php echo LANG_VALUE_107; ?></label>
+                                    <label for=""><?php echo  $languages[107]; ?></label>
                                     <input type="text" class="form-control" name="cust_b_city" value="<?php echo $_SESSION['customer']['cust_b_city']; ?>">
                                 </div>
                                 
                             </div>
                             <div class="col-md-6">
-                                <h3><?php echo LANG_VALUE_87; ?></h3>
+                                <h3><?php echo  $languages[87]; ?></h3>
                                 <div class="form-group">
-                                    <label for=""><?php echo LANG_VALUE_102; ?></label>
+                                    <label for=""><?php echo  $languages[102]; ?></label>
                                     <input type="text" class="form-control" name="cust_s_name" value="<?php echo $_SESSION['customer']['cust_s_name']; ?>">
                                 </div>
                                
                                 <div class="form-group">
-                                    <label for=""><?php echo LANG_VALUE_104; ?></label>
+                                    <label for=""><?php echo  $languages[104]; ?></label>
                                     <input type="text" class="form-control" name="cust_s_phone" value="<?php echo $_SESSION['customer']['cust_s_phone']; ?>">
                                 </div>
                                 <div class="form-group">
-                                    <label for=""><?php echo LANG_VALUE_106; ?></label>
+                                    <label for=""><?php echo  $languages[106]; ?></label>
                                     <select name="cust_s_country" class="form-control">
                                         <?php
                                         $statement = $pdo->prepare("SELECT * FROM tbl_country ORDER BY country_name ASC");
@@ -158,17 +158,17 @@ if (isset($_POST['form1'])) {
                                     </select>
                                 </div>
                                 <div class="form-group">
-                                    <label for=""><?php echo LANG_VALUE_105; ?></label>
+                                    <label for=""><?php echo  $languages[105]; ?></label>
                                     <textarea name="cust_s_address" class="form-control" cols="30" rows="10" style="height:100px;"><?php echo $_SESSION['customer']['cust_s_address']; ?></textarea>
                                 </div>
                                 <div class="form-group">
-                                    <label for=""><?php echo LANG_VALUE_107; ?></label>
+                                    <label for=""><?php echo  $languages[107]; ?></label>
                                     <input type="text" class="form-control" name="cust_s_city" value="<?php echo $_SESSION['customer']['cust_s_city']; ?>">
                                 </div>
                                
                             </div>
                         </div>
-                        <input type="submit" class="btn btn-primary" value="<?php echo LANG_VALUE_5; ?>" name="form1">
+                        <input type="submit" class="btn btn-primary" value="<?php echo  $languages[5]; ?>" name="form1">
                     </form>
                 </div>                
             </div>

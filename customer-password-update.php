@@ -24,13 +24,13 @@ if (isset($_POST['form1'])) {
 
     if( empty($_POST['cust_password']) || empty($_POST['cust_re_password']) ) {
         $valid = 0;
-        $error_message .= LANG_VALUE_138."<br>";
+        $error_message .=  $languages[138]."<br>";
     }
 
     if( !empty($_POST['cust_password']) && !empty($_POST['cust_re_password']) ) {
         if($_POST['cust_password'] != $_POST['cust_re_password']) {
             $valid = 0;
-            $error_message .= LANG_VALUE_139."<br>";
+            $error_message .=  $languages[139]."<br>";
         }
     }
     
@@ -45,7 +45,7 @@ if (isset($_POST['form1'])) {
         
         $_SESSION['customer']['cust_password'] = md5($password);        
 
-        $success_message = LANG_VALUE_141;
+        $success_message =  $languages[141];
     }
 }
 ?>
@@ -59,7 +59,7 @@ if (isset($_POST['form1'])) {
             <div class="col-md-12">
                 <div class="user-content">
                     <h3 class="text-center">
-                        <?php echo LANG_VALUE_99; ?>
+                        <?php echo  $languages[99]; ?>
                     </h3>
                     <form action="" method="post">
                         <?php $csrf->echoInputField(); ?>
@@ -75,14 +75,14 @@ if (isset($_POST['form1'])) {
                                 }
                                 ?>
                                 <div class="form-group">
-                                    <label for=""><?php echo LANG_VALUE_100; ?> *</label>
+                                    <label for=""><?php echo  $languages[100]; ?> *</label>
                                     <input type="password" class="form-control" name="cust_password">
                                 </div>
                                 <div class="form-group">
-                                    <label for=""><?php echo LANG_VALUE_101; ?> *</label>
+                                    <label for=""><?php echo  $languages[101]; ?> *</label>
                                     <input type="password" class="form-control" name="cust_re_password">
                                 </div>
-                                <input type="submit" class="btn btn-primary" value="<?php echo LANG_VALUE_5; ?>" name="form1">
+                                <input type="submit" class="btn btn-primary" value="<?php echo  $languages[5]; ?>" name="form1">
                             </div>
                         </div>
                         

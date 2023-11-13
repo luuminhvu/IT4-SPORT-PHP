@@ -6,7 +6,7 @@ if(isset($_POST['form1'])) {
 
     if(empty($_POST['caption'])) {
         $valid = 0;
-        $error_message .= "Photo Caption Name can not be empty<br>";
+        $error_message .= "Tên chú thích ảnh không được để trống<br>";
     }
 
     $path = $_FILES['photo']['name'];
@@ -20,7 +20,7 @@ if(isset($_POST['form1'])) {
         $file_name = basename( $path, '.' . $ext );
         if( $ext!='jpg' && $ext!='png' && $ext!='jpeg' && $ext!='gif' ) {
             $valid = 0;
-            $error_message .= 'You must have to upload jpg, jpeg, gif or png file<br>';
+            $error_message .= 'Bạn phải tải lên tệp jpg, jpeg, gif hoặc png<br>';
         }
     }
     
@@ -42,7 +42,7 @@ if(isset($_POST['form1'])) {
 		$statement = $pdo->prepare("INSERT INTO tbl_photo (caption,photo) VALUES (?,?)");
 		$statement->execute(array($_POST['caption'],$final_name));
 
-    	$success_message = 'Photo is added successfully.';
+    	$success_message = 'Đã thêm ảnh thành công.';
     }
 }
 ?>
@@ -82,13 +82,13 @@ if(isset($_POST['form1'])) {
 				<div class="box box-info">
 					<div class="box-body">
 						<div class="form-group">
-							<label for="" class="col-sm-2 control-label">Photo Caption <span>*</span></label>
+							<label for="" class="col-sm-2 control-label">Chú thích ảnh <span>*</span></label>
 							<div class="col-sm-4">
 								<input type="text" class="form-control" name="caption">
 							</div>
 						</div>
 						<div class="form-group">
-							<label for="" class="col-sm-2 control-label">Upload Photo <span>*</span></label>
+							<label for="" class="col-sm-2 control-label">Cập nhật ảnh <span>*</span></label>
 							<div class="col-sm-4" style="padding-top:6px;">
 								<input type="file" name="photo">
 							</div>
@@ -96,7 +96,7 @@ if(isset($_POST['form1'])) {
 						<div class="form-group">
 							<label for="" class="col-sm-2 control-label"></label>
 							<div class="col-sm-6">
-								<button type="submit" class="btn btn-success pull-left" name="form1">Submit</button>
+								<button type="submit" class="btn btn-success pull-left" name="form1">Xác nhận</button>
 							</div>
 						</div>
 					</div>

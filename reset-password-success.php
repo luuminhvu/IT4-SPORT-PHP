@@ -11,7 +11,7 @@ foreach ($result as $row) {
 
 <div class="page-banner" style="background-color:#444;background-image: url(assets/uploads/<?php echo $banner_forget_password; ?>);">
     <div class="inner">
-        <h1><?php echo LANG_VALUE_149; ?></h1>
+        <h1><?php echo  $languages[149]; ?></h1>
     </div>
 </div>
 
@@ -20,8 +20,8 @@ foreach ($result as $row) {
         <div class="row">
             <div class="col-md-12">
                 <div class="user-content">
-                    <?php echo LANG_VALUE_146; ?><br><br>
-                    <a href="<?php echo BASE_URL; ?>login.php" style="color:#e4144d;font-weight:bold;"><?php echo LANG_VALUE_11; ?></a>
+                    <?php echo  $languages[146]; ?><br><br>
+                    <a href="<?php echo BASE_URL; ?>login.php" style="color:#e4144d;font-weight:bold;"><?php echo  $languages[11]; ?></a>
                 </div>                
             </div>
         </div>

@@ -123,7 +123,7 @@ if( !isset($_REQUEST['id']) || !isset($_REQUEST['type']) ) {
 
 <div class="page-banner" style="background-image: url(assets/uploads/<?php echo $banner_product_category; ?>)">
     <div class="inner">
-        <h1><?php echo LANG_VALUE_50; ?> <?php echo $title; ?></h1>
+        <h1><?php echo  $languages[50]; ?> <?php echo $title; ?></h1>
     </div>
 </div>
 
@@ -135,7 +135,7 @@ if( !isset($_REQUEST['id']) || !isset($_REQUEST['type']) ) {
             </div>
             <div class="col-md-9">
 
-                <h3><?php echo LANG_VALUE_51; ?> "<?php echo $title; ?>"</h3>
+                <h3><?php echo  $languages[51]; ?> "<?php echo $title; ?>"</h3>
                 <div class="product product-cat">
 
                     <div class="row">
@@ -156,7 +156,7 @@ if( !isset($_REQUEST['id']) || !isset($_REQUEST['type']) ) {
                         endfor;
 
                         if($prod_count==0) {
-                            echo '<div class="pl_15">'.LANG_VALUE_153.'</div>';
+                            echo '<div class="pl_15">'. $languages[153].'</div>';
                         } else {
                             for($ii=0;$ii<count($final_ecat_ids);$ii++) {
                                 $statement = $pdo->prepare("SELECT * FROM tbl_product WHERE ecat_id=? AND p_is_active=?");
@@ -177,10 +177,10 @@ if( !isset($_REQUEST['id']) || !isset($_REQUEST['type']) ) {
                                             href="product.php?id=<?php echo $row['p_id']; ?>"><?php echo $row['p_name']; ?></a>
                                     </h3>
                                     <h4>
-                                        <?php echo LANG_VALUE_1; ?><?php echo $row['p_current_price']; ?>
+                                        <?php echo  $languages[1]; ?><?php echo $row['p_current_price']; ?>
                                         <?php if($row['p_old_price'] != ''): ?>
                                         <del>
-                                            <?php echo LANG_VALUE_1; ?><?php echo $row['p_old_price']; ?>
+                                            <?php echo  $languages[1]; ?><?php echo $row['p_old_price']; ?>
                                         </del>
                                         <?php endif; ?>
                                     </h4>
@@ -261,7 +261,7 @@ if( !isset($_REQUEST['id']) || !isset($_REQUEST['type']) ) {
                                     </div>
                                     <?php else: ?>
                                     <p><a href="product.php?id=<?php echo $row['p_id']; ?>"><i
-                                                class="fa fa-shopping-cart"></i> <?php echo LANG_VALUE_154; ?></a></p>
+                                                class="fa fa-shopping-cart"></i> <?php echo  $languages[154]; ?></a></p>
                                     <?php endif; ?>
                                 </div>
                             </div>

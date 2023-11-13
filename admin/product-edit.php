@@ -6,32 +6,32 @@ if(isset($_POST['form1'])) {
 
     if(empty($_POST['tcat_id'])) {
         $valid = 0;
-        $error_message .= "You must have to select a top level category<br>";
+        $error_message .= "Bạn phải chọn danh mục top<br>";
     }
 
     if(empty($_POST['mcat_id'])) {
         $valid = 0;
-        $error_message .= "You must have to select a mid level category<br>";
+        $error_message .= "Bạn phải chọn một danh mục mid<br>";
     }
 
     if(empty($_POST['ecat_id'])) {
         $valid = 0;
-        $error_message .= "You must have to select an end level category<br>";
+        $error_message .= "Bạn phải chọn một danh mục con<br>";
     }
 
     if(empty($_POST['p_name'])) {
         $valid = 0;
-        $error_message .= "Product name can not be empty<br>";
+        $error_message .= "Tên sản phẩm không được để trống<br>";
     }
 
     if(empty($_POST['p_current_price'])) {
         $valid = 0;
-        $error_message .= "Current Price can not be empty<br>";
+        $error_message .= "Giá hiện tại không được để trống<br>";
     }
 
     if(empty($_POST['p_qty'])) {
         $valid = 0;
-        $error_message .= "Quantity can not be empty<br>";
+        $error_message .= "Số lượng không được để trống<br>";
     }
 
     $path = $_FILES['p_featured_photo']['name'];
@@ -42,7 +42,7 @@ if(isset($_POST['form1'])) {
         $file_name = basename( $path, '.' . $ext );
         if( $ext!='jpg' && $ext!='png' && $ext!='jpeg' && $ext!='gif' ) {
             $valid = 0;
-            $error_message .= 'You must have to upload jpg, jpeg, gif or png file<br>';
+            $error_message .= 'Bạn phải tải lên tệp jpg, jpeg, gif hoặc png<br>';
         }
     }
 
@@ -215,10 +215,10 @@ if(!isset($_REQUEST['id'])) {
 
 <section class="content-header">
 	<div class="content-header-left">
-		<h1>Edit Product</h1>
+		<h1>Sửa sản phẩm</h1>
 	</div>
 	<div class="content-header-right">
-		<a href="product.php" class="btn btn-primary btn-sm">View All</a>
+		<a href="product.php" class="btn btn-primary btn-sm">Xem tất cả</a>
 	</div>
 </section>
 
@@ -299,10 +299,10 @@ foreach ($result as $row) {
 				<div class="box box-info">
 					<div class="box-body">
 						<div class="form-group">
-							<label for="" class="col-sm-3 control-label">Top Level Category Name <span>*</span></label>
+							<label for="" class="col-sm-3 control-label">Tên danh mục top <span>*</span></label>
 							<div class="col-sm-4">
 								<select name="tcat_id" class="form-control select2 top-cat">
-		                            <option value="">Select Top Level Category</option>
+		                            <option value="">Chọn danh mục top</option>
 		                            <?php
 		                            $statement = $pdo->prepare("SELECT * FROM tbl_top_category ORDER BY tcat_name ASC");
 		                            $statement->execute();
@@ -317,10 +317,10 @@ foreach ($result as $row) {
 							</div>
 						</div>
 						<div class="form-group">
-							<label for="" class="col-sm-3 control-label">Mid Level Category Name <span>*</span></label>
+							<label for="" class="col-sm-3 control-label">Tên danh mục mid <span>*</span></label>
 							<div class="col-sm-4">
 								<select name="mcat_id" class="form-control select2 mid-cat">
-		                            <option value="">Select Mid Level Category</option>
+		                            <option value="">Chọn danh mục mid</option>
 		                            <?php
 		                            $statement = $pdo->prepare("SELECT * FROM tbl_mid_category WHERE tcat_id = ? ORDER BY mcat_name ASC");
 		                            $statement->execute(array($tcat_id));
@@ -335,10 +335,10 @@ foreach ($result as $row) {
 							</div>
 						</div>
 						<div class="form-group">
-							<label for="" class="col-sm-3 control-label">End Level Category Name <span>*</span></label>
+							<label for="" class="col-sm-3 control-label">Tên danh mục con <span>*</span></label>
 							<div class="col-sm-4">
 								<select name="ecat_id" class="form-control select2 end-cat">
-		                            <option value="">Select End Level Category</option>
+		                            <option value="">Chọn danh mục con</option>
 		                            <?php
 		                            $statement = $pdo->prepare("SELECT * FROM tbl_end_category WHERE mcat_id = ? ORDER BY ecat_name ASC");
 		                            $statement->execute(array($mcat_id));
@@ -353,31 +353,31 @@ foreach ($result as $row) {
 							</div>
 						</div>
 						<div class="form-group">
-							<label for="" class="col-sm-3 control-label">Product Name <span>*</span></label>
+							<label for="" class="col-sm-3 control-label">Tên sản phẩm<span>*</span></label>
 							<div class="col-sm-4">
 								<input type="text" name="p_name" class="form-control" value="<?php echo $p_name; ?>">
 							</div>
 						</div>	
 						<div class="form-group">
-							<label for="" class="col-sm-3 control-label">Old Price<br><span style="font-size:10px;font-weight:normal;">(In USD)</span></label>
+							<label for="" class="col-sm-3 control-label">Giá cũ<br><span style="font-size:10px;font-weight:normal;">(In USD)</span></label>
 							<div class="col-sm-4">
 								<input type="text" name="p_old_price" class="form-control" value="<?php echo $p_old_price; ?>">
 							</div>
 						</div>	
 						<div class="form-group">
-							<label for="" class="col-sm-3 control-label">Current Price <span>*</span><br><span style="font-size:10px;font-weight:normal;">(In USD)</span></label>
+							<label for="" class="col-sm-3 control-label">Giá hiện tại <span>*</span><br><span style="font-size:10px;font-weight:normal;">(In USD)</span></label>
 							<div class="col-sm-4">
 								<input type="text" name="p_current_price" class="form-control" value="<?php echo $p_current_price; ?>">
 							</div>
 						</div>	
 						<div class="form-group">
-							<label for="" class="col-sm-3 control-label">Quantity <span>*</span></label>
+							<label for="" class="col-sm-3 control-label">Số lượng <span>*</span></label>
 							<div class="col-sm-4">
 								<input type="text" name="p_qty" class="form-control" value="<?php echo $p_qty; ?>">
 							</div>
 						</div>
 						<div class="form-group">
-							<label for="" class="col-sm-3 control-label">Select Size</label>
+							<label for="" class="col-sm-3 control-label">Chọn kích cỡ</label>
 							<div class="col-sm-4">
 								<select name="size[]" class="form-control select2" multiple="multiple">
 									<?php
@@ -402,7 +402,7 @@ foreach ($result as $row) {
 							</div>
 						</div>
 						<div class="form-group">
-							<label for="" class="col-sm-3 control-label">Select Color</label>
+							<label for="" class="col-sm-3 control-label">Chọn màu</label>
 							<div class="col-sm-4">
 								<select name="color[]" class="form-control select2" multiple="multiple">
 									<?php
@@ -427,20 +427,20 @@ foreach ($result as $row) {
 							</div>
 						</div>
 						<div class="form-group">
-							<label for="" class="col-sm-3 control-label">Existing Featured Photo</label>
+							<label for="" class="col-sm-3 control-label">Ảnh nổi bật hiện có</label>
 							<div class="col-sm-4" style="padding-top:4px;">
 								<img src="../assets/uploads/<?php echo $p_featured_photo; ?>" alt="" style="width:150px;">
 								<input type="hidden" name="current_photo" value="<?php echo $p_featured_photo; ?>">
 							</div>
 						</div>
 						<div class="form-group">
-							<label for="" class="col-sm-3 control-label">Change Featured Photo </label>
+							<label for="" class="col-sm-3 control-label">Thay đổi ảnh nổi bật </label>
 							<div class="col-sm-4" style="padding-top:4px;">
 								<input type="file" name="p_featured_photo">
 							</div>
 						</div>
 						<div class="form-group">
-							<label for="" class="col-sm-3 control-label">Other Photos</label>
+							<label for="" class="col-sm-3 control-label">Ảnh khác</label>
 							<div class="col-sm-4" style="padding-top:4px;">
 								<table id="ProductTable" style="width:100%;">
 			                        <tbody>
@@ -469,31 +469,31 @@ foreach ($result as $row) {
 			                </div>
 						</div>
 						<div class="form-group">
-							<label for="" class="col-sm-3 control-label">Description</label>
+							<label for="" class="col-sm-3 control-label">Mô tả</label>
 							<div class="col-sm-8">
 								<textarea name="p_description" class="form-control" cols="30" rows="10" id="editor1"><?php echo $p_description; ?></textarea>
 							</div>
 						</div>
 						<div class="form-group">
-							<label for="" class="col-sm-3 control-label">Short Description</label>
+							<label for="" class="col-sm-3 control-label">Mô tả ngắn</label>
 							<div class="col-sm-8">
 								<textarea name="p_short_description" class="form-control" cols="30" rows="10" id="editor1"><?php echo $p_short_description; ?></textarea>
 							</div>
 						</div>
 						<div class="form-group">
-							<label for="" class="col-sm-3 control-label">Features</label>
+							<label for="" class="col-sm-3 control-label">Tính năng</label>
 							<div class="col-sm-8">
 								<textarea name="p_feature" class="form-control" cols="30" rows="10" id="editor3"><?php echo $p_feature; ?></textarea>
 							</div>
 						</div>
 						<div class="form-group">
-							<label for="" class="col-sm-3 control-label">Conditions</label>
+							<label for="" class="col-sm-3 control-label">Điều kiện</label>
 							<div class="col-sm-8">
 								<textarea name="p_condition" class="form-control" cols="30" rows="10" id="editor4"><?php echo $p_condition; ?></textarea>
 							</div>
 						</div>
 						<div class="form-group">
-							<label for="" class="col-sm-3 control-label">Return Policy</label>
+							<label for="" class="col-sm-3 control-label">Chính sách trả hàng</label>
 							<div class="col-sm-8">
 								<textarea name="p_return_policy" class="form-control" cols="30" rows="10" id="editor5"><?php echo $p_return_policy; ?></textarea>
 							</div>
@@ -502,8 +502,8 @@ foreach ($result as $row) {
 							<label for="" class="col-sm-3 control-label">Is Featured?</label>
 							<div class="col-sm-8">
 								<select name="p_is_featured" class="form-control" style="width:auto;">
-									<option value="0" <?php if($p_is_featured == '0'){echo 'selected';} ?>>No</option>
-									<option value="1" <?php if($p_is_featured == '1'){echo 'selected';} ?>>Yes</option>
+									<option value="0" <?php if($p_is_featured == '0'){echo 'selected';} ?>>Không</option>
+									<option value="1" <?php if($p_is_featured == '1'){echo 'selected';} ?>>Có</option>
 								</select> 
 							</div>
 						</div>
@@ -511,15 +511,15 @@ foreach ($result as $row) {
 							<label for="" class="col-sm-3 control-label">Is Active?</label>
 							<div class="col-sm-8">
 								<select name="p_is_active" class="form-control" style="width:auto;">
-									<option value="0" <?php if($p_is_active == '0'){echo 'selected';} ?>>No</option>
-									<option value="1" <?php if($p_is_active == '1'){echo 'selected';} ?>>Yes</option>
+									<option value="0" <?php if($p_is_active == '0'){echo 'selected';} ?>>Không</option>
+									<option value="1" <?php if($p_is_active == '1'){echo 'selected';} ?>>Có</option>
 								</select> 
 							</div>
 						</div>
 						<div class="form-group">
 							<label for="" class="col-sm-3 control-label"></label>
 							<div class="col-sm-6">
-								<button type="submit" class="btn btn-success pull-left" name="form1">Update</button>
+								<button type="submit" class="btn btn-success pull-left" name="form1">Cập nhật</button>
 							</div>
 						</div>
 					</div>
