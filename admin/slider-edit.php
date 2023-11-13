@@ -13,7 +13,7 @@ if(isset($_POST['form1'])) {
         $file_name = basename( $path, '.' . $ext );
         if( $ext!='jpg' && $ext!='png' && $ext!='jpeg' && $ext!='gif' ) {
             $valid = 0;
-            $error_message .= 'You must have to upload jpg, jpeg, gif or png file<br>';
+            $error_message .= 'Bạn phải tải lên file jpg, jpeg, gif hoặc png <br>';
         }
     }
 
@@ -33,7 +33,7 @@ if(isset($_POST['form1'])) {
     		$statement->execute(array($final_name,$_POST['heading'],$_POST['content'],$_POST['button_text'],$_POST['button_url'],$_POST['position'],$_REQUEST['id']));
 		}	   
 
-	    $success_message = 'Slider is updated successfully!';
+	    $success_message = 'Slider đã update thành công!';
 	}
 }
 ?>
@@ -57,10 +57,10 @@ if(!isset($_REQUEST['id'])) {
 
 <section class="content-header">
 	<div class="content-header-left">
-		<h1>Edit Slider</h1>
+		<h1>Sửa Slider</h1>
 	</div>
 	<div class="content-header-right">
-		<a href="slider.php" class="btn btn-primary btn-sm">View All</a>
+		<a href="slider.php" class="btn btn-primary btn-sm">Xem tất cả</a>
 	</div>
 </section>
 

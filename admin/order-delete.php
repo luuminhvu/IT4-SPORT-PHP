@@ -5,7 +5,7 @@ if(!isset($_REQUEST['id'])) {
 	header('location: logout.php');
 	exit;
 } else {
-	// Check the id is valid or not
+	
 	$statement = $pdo->prepare("SELECT * FROM tbl_payment WHERE id=?");
 	$statement->execute(array($_REQUEST['id']));
 	$total = $statement->rowCount();
@@ -17,7 +17,7 @@ if(!isset($_REQUEST['id'])) {
 		foreach ($result as $row) {
 			$payment_id = $row['payment_id'];
 			$payment_status = $row['payment_status'];
-			$shipping_status = $row['shipping_status'];
+			$shipping_status = $row['tss_id'];
 		}
 	}
 }
@@ -25,10 +25,11 @@ if(!isset($_REQUEST['id'])) {
 
 <?php
 	
-	if( ($payment_status == 'Completed') && ($shipping_status == 'Completed') ):
-		// No return to stock
+	if( ($payment_status == 'Completed') && ($shipping_status == 4) ): 
+		//$shipping_status == 4 là đã giao hàng thành công
+		
 	else:
-		// Return the stock
+		
 		$statement = $pdo->prepare("SELECT * FROM tbl_order WHERE payment_id=?");
 		$statement->execute(array($payment_id));
 		$result = $statement->fetchAll(PDO::FETCH_ASSOC);							
@@ -45,11 +46,11 @@ if(!isset($_REQUEST['id'])) {
 		}	
 	endif;	
 
-	// Delete from tbl_order
+	
 	$statement = $pdo->prepare("DELETE FROM tbl_order WHERE payment_id=?");
 	$statement->execute(array($payment_id));
 
-	// Delete from tbl_payment
+	
 	$statement = $pdo->prepare("DELETE FROM tbl_payment WHERE id=?");
 	$statement->execute(array($_REQUEST['id']));
 
