@@ -183,10 +183,7 @@ if(!isset($_SESSION['cart_p_id'])) {
                                     <td><?php echo $_SESSION['customer']['cust_b_name']; ?></p>
                                     </td>
                                 </tr>
-                                <tr>
-                                    <td><?php echo LANG_VALUE_103; ?></td>
-                                    <td><?php echo $_SESSION['customer']['cust_b_cname']; ?></td>
-                                </tr>
+                                
                                 <tr>
                                     <td><?php echo LANG_VALUE_104; ?></td>
                                     <td><?php echo $_SESSION['customer']['cust_b_phone']; ?></td>
@@ -214,14 +211,7 @@ if(!isset($_SESSION['cart_p_id'])) {
                                     <td><?php echo LANG_VALUE_107; ?></td>
                                     <td><?php echo $_SESSION['customer']['cust_b_city']; ?></td>
                                 </tr>
-                                <tr>
-                                    <td><?php echo LANG_VALUE_108; ?></td>
-                                    <td><?php echo $_SESSION['customer']['cust_b_state']; ?></td>
-                                </tr>
-                                <tr>
-                                    <td><?php echo LANG_VALUE_109; ?></td>
-                                    <td><?php echo $_SESSION['customer']['cust_b_zip']; ?></td>
-                                </tr>
+                                
                             </table>
                         </div>
                         <div class="col-md-6">
@@ -232,10 +222,7 @@ if(!isset($_SESSION['cart_p_id'])) {
                                     <td><?php echo $_SESSION['customer']['cust_s_name']; ?></p>
                                     </td>
                                 </tr>
-                                <tr>
-                                    <td><?php echo LANG_VALUE_103; ?></td>
-                                    <td><?php echo $_SESSION['customer']['cust_s_cname']; ?></td>
-                                </tr>
+                               
                                 <tr>
                                     <td><?php echo LANG_VALUE_104; ?></td>
                                     <td><?php echo $_SESSION['customer']['cust_s_phone']; ?></td>
@@ -263,14 +250,7 @@ if(!isset($_SESSION['cart_p_id'])) {
                                     <td><?php echo LANG_VALUE_107; ?></td>
                                     <td><?php echo $_SESSION['customer']['cust_s_city']; ?></td>
                                 </tr>
-                                <tr>
-                                    <td><?php echo LANG_VALUE_108; ?></td>
-                                    <td><?php echo $_SESSION['customer']['cust_s_state']; ?></td>
-                                </tr>
-                                <tr>
-                                    <td><?php echo LANG_VALUE_109; ?></td>
-                                    <td><?php echo $_SESSION['customer']['cust_s_zip']; ?></td>
-                                </tr>
+                                
                             </table>
                         </div>
                     </div>
@@ -292,21 +272,19 @@ if(!isset($_SESSION['cart_p_id'])) {
 		                $checkout_access = 1;
 		                if(
 		                    ($_SESSION['customer']['cust_b_name']=='') ||
-		                    ($_SESSION['customer']['cust_b_cname']=='') ||
+
 		                    ($_SESSION['customer']['cust_b_phone']=='') ||
 		                    ($_SESSION['customer']['cust_b_country']=='') ||
 		                    ($_SESSION['customer']['cust_b_address']=='') ||
 		                    ($_SESSION['customer']['cust_b_city']=='') ||
-		                    ($_SESSION['customer']['cust_b_state']=='') ||
-		                    ($_SESSION['customer']['cust_b_zip']=='') ||
+
 		                    ($_SESSION['customer']['cust_s_name']=='') ||
-		                    ($_SESSION['customer']['cust_s_cname']=='') ||
+
 		                    ($_SESSION['customer']['cust_s_phone']=='') ||
 		                    ($_SESSION['customer']['cust_s_country']=='') ||
 		                    ($_SESSION['customer']['cust_s_address']=='') ||
-		                    ($_SESSION['customer']['cust_s_city']=='') ||
-		                    ($_SESSION['customer']['cust_s_state']=='') ||
-		                    ($_SESSION['customer']['cust_s_zip']=='')
+		                    ($_SESSION['customer']['cust_s_city']=='') 
+
 		                ) {
 		                    $checkout_access = 0;
 		                }
