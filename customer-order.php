@@ -36,8 +36,10 @@ if(!isset($_SESSION['customer'])) {
                                     <th><?php echo LANG_VALUE_28; ?></th>
                                     <th><?php echo LANG_VALUE_29; ?></th>
                                     <th><?php echo LANG_VALUE_30; ?></th>
+                                    <th><?php echo 'Trạng thái đơn hàng' ?></th>
                                     <th><?php echo LANG_VALUE_31; ?></th>
                                     <th><?php echo LANG_VALUE_32; ?></th>
+                                  
                                 </tr>
                             </thead>
                             <tbody>
@@ -169,6 +171,17 @@ if(!isset($_SESSION['customer'])) {
                                         <td><?php echo $row['txnid']; ?></td>
                                         <td><?php echo '$'.$row['paid_amount']; ?></td>
                                         <td><?php echo $row['payment_status']; ?></td>
+                                        <td><?php 
+                                        
+                                        $statement4 = $pdo->prepare("SELECT * FROM tbl_transactstatus where tss_id =?");
+                                        $statement4->execute(array($row['tss_id']));
+                                        $result4 = $statement4->fetchAll(PDO::FETCH_ASSOC);
+                                        foreach ($result4 as $row4) {
+                                            $shipping_stutus = $row4['tss_status'];
+                                        }
+                                        ?>
+                                            <?php echo $shipping_stutus; ?>
+                                        ?></td>
                                         <td><?php echo $row['payment_method']; ?></td>
                                         <td><?php echo $row['payment_id']; ?></td>
                                     </tr>
