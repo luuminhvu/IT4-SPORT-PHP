@@ -141,15 +141,15 @@
 
 		function confirmDelete()
 	    {
-	        return confirm("Are you sure want to delete this data?");
+	        return confirm("Bạn có chắc muốn xoá dữ liệu này?");
 	    }
 	    function confirmActive()
 	    {
-	        return confirm("Are you sure want to Active?");
+	        return confirm("Bạn có chắc muốn Active?");
 	    }
 	    function confirmInactive()
 	    {
-	        return confirm("Are you sure want to Inactive?");
+	        return confirm("Bạn có chắc muốn huỷ Active?");
 	    }
 
 	</script>

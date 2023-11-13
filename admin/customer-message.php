@@ -14,7 +14,7 @@
 				<div class="box box-info">
 					<div class="box-body">
 						<div class="form-group">
-							<label for="" class="col-sm-2 control-label">Select a Customer <span>*</span></label>
+							<label for="" class="col-sm-2 control-label">Chọn một khách hàng <span>*</span></label>
 							<div class="col-sm-4">
 								<select name="cust_id" class="form-control select2">
 								<?php
@@ -34,7 +34,7 @@
 						<div class="form-group">
 							<label for="" class="col-sm-2 control-label"></label>
 							<div class="col-sm-6">
-								<button type="submit" class="btn btn-success pull-left" name="form1">Submit</button>
+								<button type="submit" class="btn btn-success pull-left" name="form1">Thực hiện</button>
 							</div>
 						</div>
 					</div>
@@ -50,7 +50,7 @@
 <?php if(isset($_POST['form1'])): ?>
 <section class="content-header">
 	<div class="content-header-left">
-		<h1>View All Customer Messages</h1>
+		<h1>Xem tât cả tin nhắn khách hàng</h1>
 	</div>
 </section>
 
@@ -63,9 +63,9 @@
 						<thead>
 							<tr>
 								<th width="30">#</th>
-								<th width="100">Subject</th>
-								<th width="200">Message</th>
-								<th width="200">Order Details</th>
+								<th width="100">Tiêu đề</th>
+								<th width="200">Tin nhắn</th>
+								<th width="200">Chi tiết đơn hàng</th>
 							</tr>
 						</thead>
 						<tbody>
