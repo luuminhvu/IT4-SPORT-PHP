@@ -273,7 +273,7 @@ if($success_message != '') {
                             <?php echo $shipping_stutus; ?>
                             <br><br>                         
                             <form method="post" action="shipping-change-status.php">                  
-                                    <select name="tss_id" class="form-control select2">
+                                    <select name="tss_id" class="form-control">
                                         <option value="">Chọn status</option>
                                         <?php
                                         $statement3 = $pdo->prepare("SELECT * FROM tbl_transactstatus ORDER BY tss_id ASC");
@@ -287,7 +287,7 @@ if($success_message != '') {
                                         ?>
                                     </select>
                                     <input type="hidden" name="id" value="<?php echo $row['id']; ?>">
-                                    <button type="submit" class="btn btn-danger btn-xs" style="width:40%; margin-top: 20px;">Update</button>
+                                    <button type="submit" class="btn btn-danger btn-xs" style="width:50%; margin-top: 20px;">Update</button>
 
                             </form>
 

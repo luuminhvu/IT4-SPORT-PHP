@@ -158,18 +158,18 @@ if(!isset($_SESSION['customer'])) {
                                             $statement1->execute(array($row['payment_id']));
                                             $result1 = $statement1->fetchAll(PDO::FETCH_ASSOC);
                                             foreach ($result1 as $row1) {
-                                                echo 'Product Name: '.$row1['product_name'];
+                                                echo 'Tên sản phẩm: '.$row1['product_name'];
                                                 echo '<br>Size: '.$row1['size'];
-                                                echo '<br>Color: '.$row1['color'];
-                                                echo '<br>Quantity: '.$row1['quantity'];
-                                                echo '<br>Unit Price: $'.$row1['unit_price'];
+                                                echo '<br>Màu: '.$row1['color'];
+                                                echo '<br>Số lượng: '.$row1['quantity'];
+                                                echo '<br>Đơn giá: '.$row1['unit_price'].' đ';
                                                 echo '<br><br>';
                                             }
                                             ?>
                                         </td>
                                         <td><?php echo $row['payment_date']; ?></td>
                                         <td><?php echo $row['txnid']; ?></td>
-                                        <td><?php echo '$'.$row['paid_amount']; ?></td>
+                                        <td><?php echo $row['paid_amount'] . ' đ';?></td>
                                         <td><?php echo $row['payment_status']; ?></td>
                                         <td><?php 
                                         
@@ -181,7 +181,7 @@ if(!isset($_SESSION['customer'])) {
                                         }
                                         ?>
                                             <?php echo $shipping_stutus; ?>
-                                        ?></td>
+                                        </td>
                                         <td><?php echo $row['payment_method']; ?></td>
                                         <td><?php echo $row['payment_id']; ?></td>
                                     </tr>
