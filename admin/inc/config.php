@@ -18,7 +18,7 @@ $dbuser = 'root';
 $dbpass = '';
 
 // Defining base url
-define("BASE_URL", "http://localhost/IT4-SPORT-PHP/");
+define("BASE_URL", "http://localhost/ecommercesite-php/");
 
 // Getting Admin url
 define("ADMIN_URL", BASE_URL . "admin" . "/");

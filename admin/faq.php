@@ -2,10 +2,10 @@
 
 <section class="content-header">
 	<div class="content-header-left">
-		<h1>View FAQs</h1>
+		<h1>Xem FAQ</h1>
 	</div>
 	<div class="content-header-right">
-		<a href="faq-add.php" class="btn btn-primary btn-sm">Add FAQ</a>
+		<a href="faq-add.php" class="btn btn-primary btn-sm">Thêm FAQ</a>
 	</div>
 </section>
 
@@ -18,8 +18,8 @@
 						<thead>
 							<tr>
 								<th width="30">#</th>
-								<th width="100">Title</th>
-								<th width="80">Action</th>
+								<th width="100">Tiêu đề</th>
+								<th width="80">Hành động</th>
 							</tr>
 						</thead>
 						<tbody>
@@ -35,8 +35,8 @@
 									<td><?php echo $i; ?></td>
 									<td><?php echo $row['faq_title']; ?></td>
 									<td>										
-										<a href="faq-edit.php?id=<?php echo $row['faq_id']; ?>" class="btn btn-primary btn-xs">Edit</a>
-										<a href="#" class="btn btn-danger btn-xs" data-href="faq-delete.php?id=<?php echo $row['faq_id']; ?>" data-toggle="modal" data-target="#confirm-delete">Delete</a>  
+										<a href="faq-edit.php?id=<?php echo $row['faq_id']; ?>" class="btn btn-primary btn-xs">Sửa</a>
+										<a href="#" class="btn btn-danger btn-xs" data-href="faq-delete.php?id=<?php echo $row['faq_id']; ?>" data-toggle="modal" data-target="#confirm-delete">Xoá</a>  
 									</td>
 								</tr>
 								<?php
@@ -58,14 +58,14 @@
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                <h4 class="modal-title" id="myModalLabel">Delete Confirmation</h4>
+                <h4 class="modal-title" id="myModalLabel">Xác nhận xoá</h4>
             </div>
             <div class="modal-body">
-                <p>Are you sure want to delete this item?</p>
+                <p>Bạn có chắc muốn xoá FAQ này?</p>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-                <a class="btn btn-danger btn-ok">Delete</a>
+                <button type="button" class="btn btn-default" data-dismiss="modal">Huỷ</button>
+                <a class="btn btn-danger btn-ok">Xoá</a>
             </div>
         </div>
     </div>
