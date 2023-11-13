@@ -23,8 +23,8 @@
 			<thead>
 			    <tr>
 			        <th>#</th>
-			        <th>Size Name</th>
-			        <th>Action</th>
+			        <th>Tên Size</th>
+			        <th>Hành động</th>
 			    </tr>
 			</thead>
             <tbody>
@@ -61,14 +61,14 @@
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                <h4 class="modal-title" id="myModalLabel">Delete Confirmation</h4>
+                <h4 class="modal-title" id="myModalLabel">Xác nhận Xóa</h4>
             </div>
             <div class="modal-body">
-                Are you sure want to delete this item?
+               Bạn có chắc chắn muốn xóa mục này?
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-                <a class="btn btn-danger btn-ok">Delete</a>
+                <button type="button" class="btn btn-default" data-dismiss="modal">Hủy</button>
+                <a class="btn btn-danger btn-ok">Xóa</a>
             </div>
         </div>
     </div>

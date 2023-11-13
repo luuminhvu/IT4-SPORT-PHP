@@ -23,9 +23,9 @@
 			<thead>
 			    <tr>
 			        <th>#</th>
-			        <th>Caption</th>
-			        <th>Photo</th>
-			        <th>Action</th>
+			        <th>Đầu đề</th>
+			        <th>Ảnh</th>
+			        <th>Hoạt động</th>
 			    </tr>
 			</thead>
             <tbody>
@@ -65,14 +65,14 @@
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                <h4 class="modal-title" id="myModalLabel">Delete Confirmation</h4>
+                <h4 class="modal-title" id="myModalLabel">Xóa xác nhận</h4>
             </div>
             <div class="modal-body">
-                Are you sure want to delete this item?
+			Bạn có chắc chắn muốn xóa mục này?
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-                <a class="btn btn-danger btn-ok">Delete</a>
+                <button type="button" class="btn btn-default" data-dismiss="modal">Hủy</button>
+                <a class="btn btn-danger btn-ok">Xóa</a>
             </div>
         </div>
     </div>

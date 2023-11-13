@@ -92,11 +92,11 @@ if (isset($_POST['form_review'])) {
     $total = $statement->rowCount();
 
     if ($total) {
-        $error_message = LANG_VALUE_68;
+        $error_message =  $languages[68];
     } else {
         $statement = $pdo->prepare("INSERT INTO tbl_rating (p_id,cust_id,comment,rating) VALUES (?,?,?,?)");
         $statement->execute(array($_REQUEST['id'], $_SESSION['customer']['cust_id'], $_POST['comment'], $_POST['rating']));
-        $success_message = LANG_VALUE_163;
+        $success_message =  $languages[163];
     }
 
 }
@@ -432,7 +432,7 @@ if ($success_message1 != '') {
                                     <div class="row">
                                         <?php if (isset($size)): ?>
                                             <div class="col-md-12 mb_20">
-                                                <?php echo LANG_VALUE_52; ?> <br>
+                                                <?php echo  $languages[52]; ?> <br>
                                                 <select name="size_id" class="form-control select2" style="width:auto;">
                                                     <?php
                                                     $statement = $pdo->prepare("SELECT * FROM tbl_size");
@@ -454,7 +454,7 @@ if ($success_message1 != '') {
 
                                         <?php if (isset($color)): ?>
                                             <div class="col-md-12">
-                                                <?php echo LANG_VALUE_53; ?> <br>
+                                                <?php echo  $languages[53]; ?> <br>
                                                 <select name="color_id" class="form-control select2" style="width:auto;">
                                                     <?php
                                                     $statement = $pdo->prepare("SELECT * FROM tbl_color");
@@ -479,36 +479,36 @@ if ($success_message1 != '') {
                                 </div>
                                 <div class="p-price">
                                     <span style="font-size:14px;">
-                                        <?php echo LANG_VALUE_54; ?>
+                                        <?php echo  $languages[54]; ?>
                                     </span><br>
                                     <span>
                                         <?php if ($p_old_price != ''): ?>
                                             <del>
                                                 <?php echo $p_old_price; ?>
-                                                <?php echo LANG_VALUE_1; ?>
+                                                <?php echo  $languages[1]; ?>
                                             </del>
                                         <?php endif; ?>
                                       
                                  
                                         
                                         <?php echo $p_current_price; ?>
-                                        <?php echo LANG_VALUE_1; ?>
+                                        <?php echo  $languages[1]; ?>
                                     </span>
                                 </div>
                                 <input type="hidden" name="p_current_price" value="<?php echo $p_current_price; ?>">
                                 <input type="hidden" name="p_name" value="<?php echo $p_name; ?>">
                                 <input type="hidden" name="p_featured_photo" value="<?php echo $p_featured_photo; ?>">
                                 <div class="p-quantity">
-                                    <?php echo LANG_VALUE_55; ?> <br>
+                                    <?php echo  $languages[55]; ?> <br>
                                     <input type="number" class="input-text qty" step="1" min="1" max="" name="p_qty"
                                         value="1" title="Qty" size="4" pattern="[0-9]*" inputmode="numeric">
                                 </div>
                                 <div class="btn-cart btn-cart1">
-                                    <input type="submit" value="<?php echo LANG_VALUE_154; ?>" name="form_add_to_cart">
+                                    <input type="submit" value="<?php echo  $languages[154]; ?>" name="form_add_to_cart">
                                 </div>
                             </form>
                             <div class="share">
-                                <?php echo LANG_VALUE_58; ?> <br>
+                                <?php echo  $languages[58]; ?> <br>
                                 <div class="sharethis-inline-share-buttons"></div>
                             </div>
                         </div>
@@ -520,21 +520,21 @@ if ($success_message1 != '') {
                             <ul class="nav nav-tabs" role="tablist">
                                 <li role="presentation" class="active"><a href="#description"
                                         aria-controls="description" role="tab" data-toggle="tab">
-                                        <?php echo LANG_VALUE_59; ?>
+                                        <?php echo  $languages[59]; ?>
                                     </a></li>
                                 <li role="presentation"><a href="#feature" aria-controls="feature" role="tab"
                                         data-toggle="tab">
-                                        <?php echo LANG_VALUE_60; ?>
+                                        <?php echo  $languages[60]; ?>
                                     </a></li>
                                 <li role="presentation"><a href="#condition" aria-controls="condition" role="tab"
                                         data-toggle="tab">
-                                        <?php echo LANG_VALUE_61; ?>
+                                        <?php echo  $languages[61]; ?>
                                     </a></li>
                                 <li role="presentation"><a href="#return_policy" aria-controls="return_policy"
                                         role="tab" data-toggle="tab">
-                                        <?php echo LANG_VALUE_62; ?>
+                                        <?php echo  $languages[62]; ?>
                                     </a></li>
-                                <!-- <li role="presentation"><a href="#review" aria-controls="review" role="tab" data-toggle="tab"><?php echo LANG_VALUE_63; ?></a></li> -->
+                                <!-- <li role="presentation"><a href="#review" aria-controls="review" role="tab" data-toggle="tab"><?php echo  $languages[63]; ?></a></li> -->
                             </ul>
 
                             <!-- Tab panes -->
@@ -544,7 +544,7 @@ if ($success_message1 != '') {
                                     <p>
                                         <?php
                                         if ($p_description == '') {
-                                            echo LANG_VALUE_70;
+                                            echo  $languages[70];
                                         } else {
                                             echo $p_description;
                                         }
@@ -555,7 +555,7 @@ if ($success_message1 != '') {
                                     <p>
                                         <?php
                                         if ($p_feature == '') {
-                                            echo LANG_VALUE_71;
+                                            echo  $languages[71];
                                         } else {
                                             echo $p_feature;
                                         }
@@ -566,7 +566,7 @@ if ($success_message1 != '') {
                                     <p>
                                         <?php
                                         if ($p_condition == '') {
-                                            echo LANG_VALUE_72;
+                                            echo  $languages[72];
                                         } else {
                                             echo $p_condition;
                                         }
@@ -577,7 +577,7 @@ if ($success_message1 != '') {
                                     <p>
                                         <?php
                                         if ($p_return_policy == '') {
-                                            echo LANG_VALUE_73;
+                                            echo  $languages[73];
                                         } else {
                                             echo $p_return_policy;
                                         }
@@ -597,7 +597,7 @@ if ($success_message1 != '') {
                                         $total = $statement->rowCount();
                                         ?>
                                         <h2>
-                                            <?php echo LANG_VALUE_63; ?> (
+                                            <?php echo  $languages[63]; ?> (
                                             <?php echo $total; ?>)
                                         </h2>
                                         <?php
@@ -608,14 +608,14 @@ if ($success_message1 != '') {
                                                 $j++;
                                                 ?>
                                                 <div class="mb_10"><b><u>
-                                                            <?php echo LANG_VALUE_64; ?>
+                                                            <?php echo  $languages[64]; ?>
                                                             <?php echo $j; ?>
                                                         </u></b>
                                                 </div>
                                                 <table class="table table-bordered">
                                                     <tr>
                                                         <th style="width:170px;">
-                                                            <?php echo LANG_VALUE_75; ?>
+                                                            <?php echo  $languages[75]; ?>
                                                         </th>
                                                         <td>
                                                             <?php echo $row['cust_name']; ?>
@@ -623,7 +623,7 @@ if ($success_message1 != '') {
                                                     </tr>
                                                     <tr>
                                                         <th>
-                                                            <?php echo LANG_VALUE_76; ?>
+                                                            <?php echo  $languages[76]; ?>
                                                         </th>
                                                         <td>
                                                             <?php echo $row['comment']; ?>
@@ -631,7 +631,7 @@ if ($success_message1 != '') {
                                                     </tr>
                                                     <tr>
                                                         <th>
-                                                            <?php echo LANG_VALUE_78; ?>
+                                                            <?php echo  $languages[78]; ?>
                                                         </th>
                                                         <td>
                                                             <div class="rating">
@@ -653,12 +653,12 @@ if ($success_message1 != '') {
                                                 <?php
                                             }
                                         } else {
-                                            echo LANG_VALUE_74;
+                                            echo  $languages[74];
                                         }
                                         ?>
 
                                         <h2>
-                                            <?php echo LANG_VALUE_65; ?>
+                                            <?php echo  $languages[65]; ?>
                                         </h2>
                                         <?php
                                         if ($error_message != '') {
@@ -692,20 +692,20 @@ if ($success_message1 != '') {
                                                             style="height:100px;"></textarea>
                                                     </div>
                                                     <input type="submit" class="btn btn-default" name="form_review"
-                                                        value="<?php echo LANG_VALUE_67; ?>">
+                                                        value="<?php echo  $languages[67]; ?>">
                                                 </form>
                                             <?php else: ?>
                                                 <span style="color:red;">
-                                                    <?php echo LANG_VALUE_68; ?>
+                                                    <?php echo  $languages[68]; ?>
                                                 </span>
                                             <?php endif; ?>
 
 
                                         <?php else: ?>
                                             <p class="error">
-                                                <?php echo LANG_VALUE_69; ?> <br>
+                                                <?php echo  $languages[69]; ?> <br>
                                                 <a href="login.php" style="color:red;text-decoration: underline;">
-                                                    <?php echo LANG_VALUE_9; ?>
+                                                    <?php echo  $languages[9]; ?>
                                                 </a>
                                             </p>
                                         <?php endif; ?>
@@ -729,10 +729,10 @@ if ($success_message1 != '') {
             <div class="col-md-12">
                 <div class="headline">
                     <h2>
-                        <?php echo LANG_VALUE_155; ?>
+                        <?php echo  $languages[155]; ?>
                     </h2>
                     <h3>
-                        <?php echo LANG_VALUE_156; ?>
+                        <?php echo  $languages[156]; ?>
                     </h3>
                 </div>
             </div>
@@ -761,11 +761,11 @@ if ($success_message1 != '') {
                                     </a>
                                 </h3>
                                 <h4>
-                                    <?php echo LANG_VALUE_1; ?>
+                                    <?php echo  $languages[1]; ?>
                                     <?php echo $row['p_current_price']; ?>
                                     <?php if ($row['p_old_price'] != ''): ?>
                                         <del>
-                                            <?php echo LANG_VALUE_1; ?>
+                                            <?php echo  $languages[1]; ?>
                                             <?php echo $row['p_old_price']; ?>
                                         </del>
                                     <?php endif; ?>
@@ -835,7 +835,7 @@ if ($success_message1 != '') {
                                     ?>
                                 </div>
                                 <p><a href="product.php?id=<?php echo $row['p_id']; ?>">
-                                        <?php echo LANG_VALUE_154; ?>
+                                        <?php echo  $languages[154]; ?>
                                     </a>
                                 </p>
                             </div>

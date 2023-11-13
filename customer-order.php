@@ -25,20 +25,20 @@ if(!isset($_SESSION['customer'])) {
             </div>
             <div class="col-md-12">
                 <div class="user-content">
-                    <h3><?php echo LANG_VALUE_25; ?></h3>
+                    <h3><?php echo  $languages[25]; ?></h3>
                     <div class="table-responsive">
                         <table class="table table-bordered table-striped table-hover">
                             <thead>
                                 <tr>
                                     <th><?php echo '#' ?></th>
-                                    <th><?php echo LANG_VALUE_48; ?></th>
-                                    <th><?php echo LANG_VALUE_27; ?></th>
-                                    <th><?php echo LANG_VALUE_28; ?></th>
-                                    <th><?php echo LANG_VALUE_29; ?></th>
-                                    <th><?php echo LANG_VALUE_30; ?></th>
+                                    <th><?php echo  $languages[48]; ?></th>
+                                    <th><?php echo  $languages[27]; ?></th>
+                                    <th><?php echo  $languages[28]; ?></th>
+                                    <th><?php echo  $languages[29]; ?></th>
+                                    <th><?php echo  $languages[30]; ?></th>
                                     <th><?php echo 'Trạng thái đơn hàng' ?></th>
-                                    <th><?php echo LANG_VALUE_31; ?></th>
-                                    <th><?php echo LANG_VALUE_32; ?></th>
+                                    <th><?php echo  $languages[31]; ?></th>
+                                    <th><?php echo  $languages[32]; ?></th>
                                   
                                 </tr>
                             </thead>

@@ -2,10 +2,10 @@
 
 <section class="content-header">
 	<div class="content-header-left">
-		<h1>View Services</h1>
+		<h1>Xem dịch vụ</h1>
 	</div>
 	<div class="content-header-right">
-		<a href="service-add.php" class="btn btn-primary btn-sm">Add Service</a>
+		<a href="service-add.php" class="btn btn-primary btn-sm">Thêm dịch vụ</a>
 	</div>
 </section>
 
@@ -18,10 +18,10 @@
 						<thead>
 							<tr>
 								<th width="30">#</th>
-								<th>Photo</th>
-								<th width="100">Title</th>
-								<th>Content</th>
-								<th width="80">Action</th>
+								<th>Ảnh</th>
+								<th width="100">Chủ đề</th>
+								<th>Nội dung</th>
+								<th width="80">Hành động</th>
 							</tr>
 						</thead>
 						<tbody>
@@ -62,14 +62,14 @@
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                <h4 class="modal-title" id="myModalLabel">Delete Confirmation</h4>
+                <h4 class="modal-title" id="myModalLabel">Xóa xác nhận</h4>
             </div>
             <div class="modal-body">
-                <p>Are you sure want to delete this item?</p>
+                <p>Bạn có chắc chắn muốn xóa mục này?</p>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
-                <a class="btn btn-danger btn-ok">Delete</a>
+                <button type="button" class="btn btn-default" data-dismiss="modal">Hủy</button>
+                <a class="btn btn-danger btn-ok">Xóa</a>
             </div>
         </div>
     </div>
