@@ -556,6 +556,8 @@ Mobile style's
   background: #f2f3f3;
   padding: 14px;
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
 }
 
 .product .text del {
@@ -563,6 +565,7 @@ Mobile style's
 }
 
 .product .text h3 {
+  flex: 1;
   font-weight: 700;
   text-align: center;
   color: #353535;

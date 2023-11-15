@@ -18,7 +18,7 @@ $dbuser = 'root';
 $dbpass = '';
 
 // Defining base url
-define("BASE_URL", "http://localhost/ecommercesite-php/");
+define("BASE_URL", "http://localhost:3000/CNPM/IT4-SPORT-PHP/");
 
 // Getting Admin url
 define("ADMIN_URL", BASE_URL . "admin" . "/");
@@ -26,7 +26,6 @@ define("ADMIN_URL", BASE_URL . "admin" . "/");
 try {
 	$pdo = new PDO("mysql:host={$dbhost};dbname={$dbname}", $dbuser, $dbpass);
 	$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-}
-catch( PDOException $exception ) {
+} catch (PDOException $exception) {
 	echo "Connection error :" . $exception->getMessage();
 }
