@@ -323,7 +323,7 @@ foreach ($result as $row) {
 						if (isset($_SESSION['customer'])) {
 							?>
 							<li><i class="fa fa-user"></i>
-								<?php echo $languages[13] ?>
+							
 								<?php echo $_SESSION['customer']['cust_name']; ?>
 							</li>
 							<li><a href="dashboard.php"><i class="fa fa-home"></i>
@@ -376,15 +376,14 @@ foreach ($result as $row) {
 					<form class="navbar-form navbar-left" role="search" action="search-result.php" method="get">
 						<?php $csrf->echoInputField(); ?>
 						<div class="form-group">
-							<input type="text" class="form-control search-top" placeholder="<?php echo $languages[2]; ?>"
-								name="search_text">
+							<input type="text" class="form-control search-top" placeholder="<?php echo $languages[2]; ?>" name="search_text" id="speechToText">
 						</div>
 						<button type="submit" class="btn btn-danger">
 							<?php echo $languages[3]; ?>
 						</button>
 					</form>
 				</div>
-			</div>
+				<img id="recordButton"  class="record-image" src="assets/uploads/mic.png" alt="Ghi âm giọng nói" onclick="record()" style="height: 25px; width:30px; margin-top: 27px;">
 		</div>
 	</div>
 
@@ -474,3 +473,17 @@ foreach ($result as $row) {
 			</div>
 		</div>
 	</div>
+<script>
+    function record() {
+        var recognition = new webkitSpeechRecognition();
+        recognition.lang = 'vi-VN';
+
+        recognition.onresult = function (event) {
+            document.getElementById('speechToText').value = event.results[0][0].transcript;
+        }
+
+        recognition.start();
+    }
+</script>
+    
+	<script src="https://apis.google.com/js/api.js"></script>
