@@ -36,7 +36,9 @@ if(!isset($_SESSION['customer'])) {
                                     <th><?php echo  $languages[28]; ?></th>
                                     <th><?php echo  $languages[29]; ?></th>
                                     <th><?php echo  $languages[30]; ?></th>
-                                    <th><?php echo 'Trạng thái đơn hàng' ?></th>
+                                    <th><?php echo 'Trạng thái đơn hàng' ?>                                
+                                
+                                </th>
                                     <th><?php echo  $languages[31]; ?></th>
                                     <th><?php echo  $languages[32]; ?></th>
                                   
@@ -181,6 +183,24 @@ if(!isset($_SESSION['customer'])) {
                                         }
                                         ?>
                                             <?php echo $shipping_stutus; ?>
+                                            <?php
+                                            
+                                if($row['tss_id']==1){
+                                    $ship = 5;
+                                    ?>
+                                   <br><br>                         
+                            <form method="post" action="change-shipping-status.php">                  
+                                    
+                                    <input type="hidden" name="id" value="<?php echo $row['id']; ?>">
+                                    <input type="hidden" name="ship" value="<?php echo $ship; ?>">
+                                    <button type="submit" class="btn btn-danger btn-xs" style="width:100%; margin-top: 20px;">Hủy đơn hàng</button>
+
+                            </form>
+                                    <?php
+                                }
+                            ?>
+                            
+
                                         </td>
                                         <td><?php echo $row['payment_method']; ?></td>
                                         <td><?php echo $row['payment_id']; ?></td>
