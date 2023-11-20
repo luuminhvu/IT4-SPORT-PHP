@@ -121,10 +121,10 @@ foreach ($result as $row) {
 	</div>
 </div>
 
-
+<!-- 
 <a href="#" class="scrollup">
 	<i class="fa fa-angle-up"></i>
-</a>
+</a> -->
 
 <?php
 $statement = $pdo->prepare("SELECT * FROM tbl_settings WHERE id=1");
@@ -213,7 +213,14 @@ foreach ($result as $row) {
 		}
 	}
 </script>
-<?php echo $before_body; ?>
+
+<script src="https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1"></script>
+<df-messenger
+  intent="WELCOME"
+  chat-title="Chăm sóc khách hàng"
+  agent-id="a25b1105-f178-483a-b2b9-beb204b62574"
+  language-code="vi"
+></df-messenger>
 </body>
 
 </html>
