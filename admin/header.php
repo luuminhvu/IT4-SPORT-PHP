@@ -98,11 +98,7 @@ if(!isset($_SESSION['user'])) {
 			        </li>
 
 					
-			        <li class="treeview <?php if( ($cur_page == 'settings.php') ) {echo 'active';} ?>">
-			          <a href="settings.php">
-			            <i class="fa fa-sliders"></i> <span>Cài đặt website</span>
-			          </a>
-			        </li>
+			    
 
                     <li class="treeview <?php if( ($cur_page == 'size.php') || ($cur_page == 'size-add.php') || ($cur_page == 'size-edit.php') || ($cur_page == 'color.php') || ($cur_page == 'color-add.php') || ($cur_page == 'color-edit.php') || ($cur_page == 'country.php') || ($cur_page == 'country-add.php') || ($cur_page == 'country-edit.php') || ($cur_page == 'shipping-cost.php') || ($cur_page == 'shipping-cost-edit.php') || ($cur_page == 'top-category.php') || ($cur_page == 'top-category-add.php') || ($cur_page == 'top-category-edit.php') || ($cur_page == 'mid-category.php') || ($cur_page == 'mid-category-add.php') || ($cur_page == 'mid-category-edit.php') || ($cur_page == 'end-category.php') || ($cur_page == 'end-category-add.php') || ($cur_page == 'end-category-edit.php') ) {echo 'active';} ?>">
                         <a href="#">
@@ -138,41 +134,12 @@ if(!isset($_SESSION['user'])) {
                     </li>
 
 
-                     <li class="treeview <?php if( ($cur_page == 'slider.php') ) {echo 'active';} ?>">
-			          <a href="slider.php">
-			            <i class="fa fa-picture-o"></i> <span>Quản lí Slider</span>
-			          </a>
-			        </li>
-                    <!-- Icons to be displayed on Shop -->
-			        <li class="treeview <?php if( ($cur_page == 'service.php') ) {echo 'active';} ?>">
-			          <a href="service.php">
-			            <i class="fa fa-list-ol"></i> <span>Dịch vụ khác</span>
-			          </a>
-			        </li>
-
-			      			        <li class="treeview <?php if( ($cur_page == 'faq.php') ) {echo 'active';} ?>">
-			          <a href="faq.php">
-			            <i class="fa fa-question-circle"></i> <span>FAQ</span>
-			          </a>
-			        </li>
-
 						<li class="treeview <?php if( ($cur_page == 'customer.php') || ($cur_page == 'customer-add.php') || ($cur_page == 'customer-edit.php') ) {echo 'active';} ?>">
 			          <a href="customer.php">
 			            <i class="fa fa-user-plus"></i> <span>Khách hàng đăng ký</span>
 			          </a>
 			        </li>
 
-			        <li class="treeview <?php if( ($cur_page == 'page.php') ) {echo 'active';} ?>">
-			          <a href="page.php">
-			            <i class="fa fa-tasks"></i> <span>Cài đặt Page</span>
-			          </a>
-			        </li>
-
-			        <li class="treeview <?php if( ($cur_page == 'social-media.php') ) {echo 'active';} ?>">
-			          <a href="social-media.php">
-			            <i class="fa fa-globe"></i> <span>Liên kết mạng xã hội</span>
-			          </a>
-			        </li>
 
 			        <li class="treeview <?php if( ($cur_page == 'subscriber.php')||($cur_page == 'subscriber.php') ) {echo 'active';} ?>">
 			          <a href="subscriber.php">

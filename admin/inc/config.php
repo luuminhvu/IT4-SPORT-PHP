@@ -3,7 +3,7 @@
 ini_set('error_reporting', E_ALL);
 
 // Setting up the time zone
-date_default_timezone_set('America/Los_Angeles');
+date_default_timezone_set('Asia/Ho_Chi_Minh');
 
 // Host Name
 $dbhost = 'localhost';
@@ -18,7 +18,7 @@ $dbuser = 'root';
 $dbpass = '';
 
 // Defining base url
-define("BASE_URL", "http://localhost/IT4-SPORT-PHP/");
+define("BASE_URL", "http://localhost/ecommercesite-php/");
 
 // Getting Admin url
 define("ADMIN_URL", BASE_URL . "admin" . "/");
