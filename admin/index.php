@@ -48,6 +48,14 @@ $total_order_pending = $statement->rowCount();
 $statement = $pdo->prepare("SELECT * FROM tbl_payment WHERE payment_status=? AND tss_id=?");
 $statement->execute(array('Completed','1'));
 $total_order_complete_shipping_pending = $statement->rowCount();
+
+$statement = $pdo->prepare("SELECT * FROM tbl_order");
+$statement->execute();
+$result = $statement->fetchAll(PDO::FETCH_ASSOC);
+$total_price = 0;
+foreach ($result as $row) {
+	$total_price += $row['unit_price'];
+}
 ?>
 
 <section class="content">
@@ -213,6 +221,19 @@ $total_order_complete_shipping_pending = $statement->rowCount();
 				  </div>
 				  <div class="icon">
 					<i class="ionicons ion-arrow-down-b"></i>
+				  </div>
+				  
+				</div>
+			  </div>
+			  <div class="col-lg-3 col-xs-6">
+				<div class="small-box bg-green">
+				  <div class="inner">
+					<h3><?php echo $total_price; ?></h3>
+  
+					<p>Tổng doanh thu tạm tính</p>
+				  </div>
+				  <div class="icon">
+					<i class="ionicons ion-podium"></i>
 				  </div>
 				  
 				</div>

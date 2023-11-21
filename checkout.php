@@ -352,17 +352,6 @@ if(!isset($_SESSION['cart_p_id'])) {
                             <form action="payment/bank/init.php" method="post" id="bank_form">
                                 <input type="hidden" name="amount" value="<?php echo $final_total; ?>">
                                 <div class="col-md-12 form-group">
-                                    <label for=""><?php echo  $languages[43]; ?></span></label><br>
-                                    <?php
-                                            $statement = $pdo->prepare("SELECT * FROM tbl_settings WHERE id=1");
-                                            $statement->execute();
-                                            $result = $statement->fetchAll(PDO::FETCH_ASSOC);
-                                            foreach ($result as $row) {
-                                                echo nl2br($row['bank_detail']);
-                                            }
-                                            ?>
-                                </div>
-                                <div class="col-md-12 form-group">
                                     <label for=""><?php echo  $languages[44]; ?> <br><span
                                             style="font-size:12px;font-weight:normal;">(<?php echo  $languages[45]; ?>)</span></label>
                                     <textarea name="transaction_info" class="form-control" cols="30"

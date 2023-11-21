@@ -236,7 +236,7 @@ if($success_message != '') {
                         		<b>Thẻ CVV:</b> <?php echo $row['card_cvv']; ?><br>
                         		<b>Tháng hết hạn:</b> <?php echo $row['card_month']; ?><br>
                         		<b>Năm hết hạn:</b> <?php echo $row['card_year']; ?><br>
-                        	<?php elseif($row['payment_method'] == 'Bank Deposit'): ?>
+                        	<?php elseif($row['payment_method'] == 'Cash On Delivery'): ?>
                         		<b>Phương thức thanh toán:</b> <?php echo '<span style="color:red;"><b>'.$row['payment_method'].'</b></span>'; ?><br>
                         		<b>Id thanh toán:</b> <?php echo $row['payment_id']; ?><br>
 								<b>Hạn:</b> <?php echo $row['payment_date']; ?><br>

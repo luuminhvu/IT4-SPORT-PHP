@@ -15,12 +15,8 @@ foreach ($result as $row) {
 ?>
 <?php
 if( !isset($_REQUEST['msg']) ) {
-	if(empty($_POST['transaction_info'])) {
-		header('location: ../../checkout.php');
-	} else {
 		$payment_date = date('Y-m-d H:i:s');
 	    $payment_id = time();
-
 	    $statement = $pdo->prepare("INSERT INTO tbl_payment (   
 	                            customer_id,
 	                            customer_name,
@@ -50,7 +46,7 @@ if( !isset($_REQUEST['msg']) ) {
 	                            '', 
 	                            '',
 	                            $_POST['transaction_info'],
-	                            'Bank Deposit',
+	                            'Cash On Delivery',
 	                            'Pending',
 	                            1,
 	                            $payment_id
@@ -141,8 +137,6 @@ if( !isset($_REQUEST['msg']) ) {
             $final_quantity = $current_qty - $arr_cart_p_qty[$i];
             $statement = $pdo->prepare("UPDATE tbl_product SET p_qty=? WHERE p_id=?");
             $statement->execute(array($final_quantity,$arr_cart_p_id[$i]));
-            
-	    }
 		$to=$_SESSION['customer']['cust_email'];
         
 		$subject = "Bạn đã đặt hàng thành công";
