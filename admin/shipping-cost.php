@@ -49,7 +49,7 @@ if(isset($_POST['form2'])) {
         $statement = $pdo->prepare("UPDATE tbl_shipping_cost_all SET amount=? WHERE sca_id=1");
         $statement->execute(array($_POST['amount']));
 
-        $success_message = 'Chi phí vận chuyển cho phần còn lại của thế giới được cập nhật thành công.';
+        $success_message = 'Chi phí vận chuyển cho các nước khác được cập nhật thành công.';
 
     }
 }
@@ -58,7 +58,7 @@ if(isset($_POST['form2'])) {
 
 <section class="content-header">
     <div class="content-header-left">
-        <h1>Add Shipping Cost</h1>
+        <h1>Thêm dịch vụ vận chuyển</h1>
     </div>
 </section>
 
@@ -160,7 +160,7 @@ if(isset($_POST['form2'])) {
 			    <tr>
 			        <th>#</th>
 			        <th>Tên Quốc gia</th>
-                    <th>Số tiền Quốc gia</th>
+                    <th>Tiền Ship</th>
 			        <th>Hành động</th>
 			    </tr>
 			</thead>
@@ -182,8 +182,8 @@ if(isset($_POST['form2'])) {
 	                    <td><?php echo $row['country_name']; ?></td>
                         <td><?php echo $row['amount']; ?></td>
 	                    <td>
-	                        <a href="shipping-cost-edit.php?id=<?php echo $row['shipping_cost_id']; ?>" class="btn btn-primary btn-xs">Edit</a>
-	                        <a href="#" class="btn btn-danger btn-xs" data-href="shipping-cost-delete.php?id=<?php echo $row['shipping_cost_id']; ?>" data-toggle="modal" data-target="#confirm-delete">Delete</a>
+	                        <a href="shipping-cost-edit.php?id=<?php echo $row['shipping_cost_id']; ?>" class="btn btn-primary btn-xs">Sửa</a>
+	                        <a href="#" class="btn btn-danger btn-xs" data-href="shipping-cost-delete.php?id=<?php echo $row['shipping_cost_id']; ?>" data-toggle="modal" data-target="#confirm-delete">Xóa</a>
 	                    </td>
 	                </tr>
             		<?php
@@ -194,14 +194,14 @@ if(isset($_POST['form2'])) {
         </div>
       </div> 
 
-      <h4 style="background: #dd4b39;color:#fff;padding:10px 20px;">Lưu ý: Nếu một quốc gia không tồn tại trong danh sách trên, chi phí vận chuyển "Phần còn lại của thế giới" sau đây sẽ được áp dụng theoat.</h4>
+      <h4 style="background: #dd4b39;color:#fff;padding:10px 20px;">Lưu ý: Nếu một quốc gia không tồn tại trong danh sách trên, chi phí vận chuyển sẽ áp dụng theo như dưới đây.</h4>
 
 </section>
 
 
 <section class="content-header">
     <div class="content-header-left">
-        <h1>Chi phí vận chuyển (Phần còn lại của thế giới)</h1>
+        <h1>Chi phí vận chuyển đối với các nước không thuộc danh sách trên</h1>
     </div>
 </section>
 
@@ -223,7 +223,7 @@ if(isset($_POST['form2'])) {
                 <div class="box box-info">
                     <div class="box-body">
                         <div class="form-group">
-                            <label for="" class="col-sm-2 control-label">Số lượng <span>*</span></label>
+                            <label for="" class="col-sm-2 control-label">Số tiền <span>*</span></label>
                             <div class="col-sm-4">
                                 <input type="text" class="form-control" name="amount" value="<?php echo $amount; ?>">
                             </div>

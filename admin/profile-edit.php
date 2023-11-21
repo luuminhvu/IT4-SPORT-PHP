@@ -128,7 +128,7 @@ if(isset($_POST['form3'])) {
 
 <section class="content-header">
 	<div class="content-header-left">
-		<h1>Edit Profile</h1>
+		<h1>Chỉnh sửa</h1>
 	</div>
 </section>
 
@@ -237,7 +237,7 @@ foreach ($result as $row) {
 							<div class="box box-info">
 								<div class="box-body">
 									<div class="form-group">
-							            <label for="" class="col-sm-2 control-label">Ảnh mớ<img src="" alt="" sizes="" srcset=""></label>
+							            <label for="" class="col-sm-2 control-label">Ảnh mới<img src="" alt="" sizes="" srcset=""></label>
 							            <div class="col-sm-6" style="padding-top:6px;">
 							                <input type="file" name="photo">
 							            </div>
