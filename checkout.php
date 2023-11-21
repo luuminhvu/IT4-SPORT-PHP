@@ -139,7 +139,7 @@ if(!isset($_SESSION['cart_p_id'])) {
                         </tr>
                         <?php
                         $statement = $pdo->prepare("SELECT * FROM tbl_shipping_cost WHERE country_id=?");
-                        $statement->execute(array($_SESSION['customer']['cust_country']));
+                        $statement->execute(array($_SESSION['customer']['cust_s_country']));
                         $total = $statement->rowCount();
                         if($total) {
                             $result = $statement->fetchAll(PDO::FETCH_ASSOC);
@@ -153,7 +153,7 @@ if(!isset($_SESSION['cart_p_id'])) {
                             foreach ($result as $row) {
                                 $shipping_cost = $row['amount'];
                             }
-                        }                        
+                        }              
                         ?>
                         <tr>
                             <td colspan="7" class="total-text"><?php echo  $languages[84]; ?></td>
@@ -165,7 +165,7 @@ if(!isset($_SESSION['cart_p_id'])) {
                                 <?php
                                 $final_total = $table_total_price+$shipping_cost;
                                 ?>
-                                <?php echo $final_total; ?><?php echo  $languages[1]; ?>
+                                <?php echo $final_total ?><?php echo  $languages[1]; ?>
                             </th>
                         </tr>
                     </table>

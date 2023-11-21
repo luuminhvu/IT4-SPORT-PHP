@@ -60,14 +60,12 @@ if (isset($_POST['form1'])) {
     $success_message =  $languages[122];
 
     $_SESSION['customer']['cust_b_name'] = strip_tags($_POST['cust_b_name']);
-
     $_SESSION['customer']['cust_b_phone'] = strip_tags($_POST['cust_b_phone']);
     $_SESSION['customer']['cust_b_country'] = strip_tags($_POST['cust_b_country']);
     $_SESSION['customer']['cust_b_address'] = strip_tags($_POST['cust_b_address']);
     $_SESSION['customer']['cust_b_city'] = strip_tags($_POST['cust_b_city']);
 
     $_SESSION['customer']['cust_s_name'] = strip_tags($_POST['cust_s_name']);
-
     $_SESSION['customer']['cust_s_phone'] = strip_tags($_POST['cust_s_phone']);
     $_SESSION['customer']['cust_s_country'] = strip_tags($_POST['cust_s_country']);
     $_SESSION['customer']['cust_s_address'] = strip_tags($_POST['cust_s_address']);
